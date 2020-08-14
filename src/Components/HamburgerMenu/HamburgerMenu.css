@@ -1,0 +1,66 @@
+@media screen and (max-width: 767px) {
+  .navOp {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .topLeft {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    padding-top: 65px;
+    position: absolute;
+    left: 0;
+  }
+  .topRight {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    padding-top: 65px;
+    position: absolute;
+    right: 0;
+  }
+  .navButton {
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.2rem;
+    color: black;
+    text-decoration: none;
+      transition: color 0.3s linear;
+  }
+  .navAa {
+    padding-left: 25px;
+  }
+  .navAb {
+    padding-left: 20px;
+  }
+  .navBa {
+    padding-right: 20px;
+  }
+  .navBb {
+    padding-right: 25px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .navButton {
+    font-size: 20px;
+  }
+  .navAa {
+    padding-left: 95px;
+  }
+  .navAb {
+    padding-left: 80px;
+  }
+  .navBa {
+    padding-right: 80px;
+  }
+  .navBb {
+    padding-right: 95px;
+  }
+}

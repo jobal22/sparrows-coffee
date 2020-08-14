@@ -1,0 +1,100 @@
+.aboutUs {
+  padding-top: 80px;
+}
+
+.bookEvent, .team {
+  font-family: 'Hind', sans-serif;
+  font-style: normal;
+  padding-top: 50%;
+  background-color: transparent;
+  min-width: 280px;
+  min-height: 618.3px;
+  color: #FFF;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bookEvent {
+  background-image: url('../../Img/hand-coffee.jpg');
+}
+
+.team {
+  background-image: url('../../Img/bride-woods.jpg');
+}
+
+.bookEvent > h1, .team > h1 {
+  font-size: 55px;
+  line-height: 1em;
+  letter-spacing: .01em;
+  text-transform: none;
+}
+
+.bookEvent > button, .team > button {
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  background-color: #FFF;
+  color: #000;
+  padding: 21px 34px;
+}
+
+.passion {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  /* min-width: 280px; */
+  text-align: left;
+  padding: 60px 0px;
+  /* min-height: 618.3px; */
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.passion > h3 {
+  font-size: 28px;
+  margin: 0px 0px 23.24px;
+}
+
+.passion > p {
+  margin: 18px 0px 0px;
+}
+
+
+@media screen and (min-width: 768px) {
+  .aboutUs {
+    padding-top: 160px;
+  }
+
+  .bookEvent, .team {
+    padding-top: 30%;
+    padding-bottom: 30%;
+  }
+  
+  .bookEvent > h1, .team > h1 {
+    font-size: 100px;
+  }
+  
+  .bookEvent > button, .team > button {
+    font-size: 25px;
+    padding: 41px 54px;
+  }
+  
+  .passion {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    /* min-width: 280px; */
+    text-align: left;
+    padding: 100px;
+    /* min-height: 618.3px; */
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  
+  
+}

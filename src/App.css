@@ -1,0 +1,65 @@
+.App {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  background-color: #FAFAFA;
+  /* color: #444; */
+  text-align: center;
+  line-height: 1.5;
+  position: relative;
+  height: 100%;
+  min-height: 95vh;
+  padding-bottom: 80px;
+  min-width: 320px;
+}
+
+.App__nav {
+  padding-top: 1px;
+  padding-bottom: 80px;
+  background-color: #FAFAFA;
+  font-family: 'Montserrat', sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  min-width: 320px;
+}
+
+
+/* .App__footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  background-color: #eeede9;
+  padding-top: 3px;
+  padding-bottom: 1px;
+  font-size: 20px;
+  font-family: 'Shadows Into Light Two', cursive;
+} */
+
+.logo {
+  width: 75px;
+  position: absolute; 
+  left: 50%;
+  transform: translate(-50%);
+  padding-top: 6px;
+  display: inline-block; 
+  text-align: center;
+}
+
+.App__main {
+  padding-left: 20px;
+  padding-right: 20px;
+
+}
+
+@media screen and (min-width: 768px) {
+  .App__nav {
+    padding-bottom: 150px;
+  }
+  
+  
+  .logo {
+    width: 150px;
+  }
+}
