@@ -25,7 +25,7 @@ export const StyledMenu = styled.nav`
     padding-left: 40px;
     font-weight: 600;
     letter-spacing: 0.2rem;
-    color: black;
+    color: #707070;
     text-decoration: none;
     transition: color 0.3s linear;
     :focus {

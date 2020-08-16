@@ -11,7 +11,7 @@ const Menu = ({ open, ...props }) => {
       <a href="/" tabIndex={tabIndex}>
         About Us
       </a>
-      <a href="/events" tabIndex={tabIndex}>
+      <a href="/book" tabIndex={tabIndex}>
         Book Event
       </a>
       <a href="/team" tabIndex={tabIndex}>

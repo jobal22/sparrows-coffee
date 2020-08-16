@@ -1,0 +1,85 @@
+.form {
+  display: flex;
+  /* justify-content: center; */
+  background-color: white;
+  margin-top: 20px;
+  margin-bottom: 150px;
+  padding: 20px;
+  text-align: left;
+  font-size: 15px;
+  width: 240px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+/* .book__form {
+  margin-left: auto;
+  margin-right: auto;
+  width: 280px;
+} */
+
+input, textarea {
+  width: 120%;
+  margin: 10px 0 10px 0;
+  border: 1px solid #BABABA;
+  border-radius: 4px;
+  height: 25px;
+}
+
+select {
+  width: 124%;
+  margin: 10px 0 10px 0;
+  border: 1px solid #BABABA;
+  border-radius: 4px;
+  height: 30px;
+}
+
+.input {
+  width: 159%;
+  margin: 10px 0 10px 0;
+  border: 1px solid #BABABA;
+  border-radius: 4px;
+  height: 25px;
+}
+
+.form__button {
+  display: flex;
+  justify-content: center;
+  width: 124%;
+}
+
+.form__button > button {
+  background-color: #9CA7AD;
+  border: 1px solid #7A7A7A;
+  border-radius: 5px;
+  padding: 15px 40px;
+  margin-top: 20px;
+  color: white;
+  font-size: 18px;
+}
+
+@media screen and (min-width: 600px) {
+  .form {
+    width: 400px;
+    /* margin-top: 0; */
+  }
+
+  input, textarea {
+    width: 195%;
+  }
+  
+  select {
+    width: 198%;
+  }
+  
+  .input {
+    width: 259%;
+  }
+  
+  .form__button {
+    display: flex;
+    justify-content: center;
+    width: 198%;
+  }
+}

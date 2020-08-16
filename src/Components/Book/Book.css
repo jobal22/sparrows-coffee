@@ -1,0 +1,40 @@
+.book {
+  padding-top: 120px;
+}
+
+.bookInfo {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  text-align: left;
+  /* padding: 60px 0px; */
+  margin-left: 20px;
+  margin-right: 20px;
+  max-width: 700px;
+}
+
+.bookInfo > h3 {
+  font-size: 23px;
+  margin: 0px 0px 23.24px;
+  color: #525252;
+}
+
+.bookInfo > p {
+  margin: 18px 0px 0px;
+  color: #70707080;
+}
+
+@media screen and (min-width: 768px) {
+  .bookInfo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    text-align: left;
+    padding: 100px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .bookInfo > h3 {
+    font-size: 28px;
+  }
+
+}

@@ -21,7 +21,7 @@ function HamburgerMenu() {
         </FocusLock>
         <div className='navOp topLeft'>
           <a className='navButton navAa' href="/">About Us</a>
-          <a className='navButton navAb' href="/events">Book Event</a>
+          <a className='navButton navAb' href="/book">Book Event</a>
         </div>
         <div className='navOp topRight'>
           <a className='navButton navBa' href="/team">Our Team</a>
