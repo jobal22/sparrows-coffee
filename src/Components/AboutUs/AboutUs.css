@@ -36,11 +36,6 @@
 }
 
 .bookEvent > button, .teamMember > button {
-  /* font-size: 15px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: .2em;
-  text-decoration: none; */
   border: none;
   cursor: pointer;
   background-color: #FFF;
@@ -77,12 +72,32 @@
   text-transform: uppercase;
   letter-spacing: .2em;
   text-decoration: none;
+}
 
+.priceCollection {
+  margin-top: 50px;
+}
+
+.prices {
+  margin-top: 30px;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* margin-left: auto;
+  margin-right: auto; */
+  text-align: center;
+}
+
+.priceLogo {
+  width: 150px;
+}
+
+.priceInfo {
+  color: #525252;
 }
 
 @media screen and (min-width: 768px) {
   .aboutUs {
-    padding-top: 160px;
+    padding-top: 175px;
   }
 
   .bookEvent, .teamMember {
@@ -112,6 +127,17 @@
   
   .passion > h3 {
     font-size: 28px;
+  }
+
+  .priceCollection {
+    margin-top: 20px;
+  }
+
+  .priceOptions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
   }
   
 }

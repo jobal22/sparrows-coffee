@@ -15,14 +15,16 @@
 .App__nav {
   padding-top: 1px;
   padding-bottom: 80px;
-  background-color: #FAFAFA;
+  background-color: #BAC7B3;
   font-family: 'Montserrat', sans-serif;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 10;
-  min-width: 320px;
+  min-width: 320px;  margin-bottom: 2.5rem;
+  border-bottom-width: 1px;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,.1), 0 2px 4px -1px rgba(0,0,0,.06);
 }
 
 

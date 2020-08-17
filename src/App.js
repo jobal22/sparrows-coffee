@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Link, Switch } from 'react-router-dom';
+import Context from './context';
 import logo from './Img/SCLogoBig.png';
 import HamburgerMenu from './Components/HamburgerMenu/HamburgerMenu';
 import AboutUs from './Components/AboutUs/AboutUs';
@@ -8,6 +9,27 @@ import Team from './Components/Team/Team';
 import './App.css';
 
 export default class App extends Component {
+
+  state = {
+    guests: [],
+    addGuest: {
+      hasError: false,
+      touched: false,
+      name: '',
+    }
+  }
+
+  setGuests = guests => {
+    this.setState({
+      guests
+    })
+  }
+
+  handleAddGuest = guest => {
+    this.setState({
+      guests: [...this.state.guests, guest],
+    })
+  }
 
   renderMainRoutes() {
     return (
@@ -20,6 +42,10 @@ export default class App extends Component {
   }
 
   render() {
+    const contextValue = {
+      guests: this.state.guests,
+      updateGuest: this.updateGuest,
+    }
     return (
       <div className='App'>
         <nav className='App__nav'>
@@ -32,8 +58,11 @@ export default class App extends Component {
             </div>
           </div>
         </nav>
-        <main className='App__main'>{this.renderMainRoutes()}
-        </main>
+        <div>
+          <Context.Provider value={contextValue}>
+            <main className='App__main'>{this.renderMainRoutes()}</main>
+          </Context.Provider>
+        </div>
         <footer className="App__footer">
           {/* <hr /> */}
           <ol className='footInfo'>

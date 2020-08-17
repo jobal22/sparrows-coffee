@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import Context from '../../context';
 import './Form.css'
 
 const Required = () => (
@@ -9,6 +11,17 @@ const Required = () => (
 
 export default class Form extends Component {
 
+  static propTypes = {
+    match: PropTypes.shape({
+      params: PropTypes.object,
+    }),
+    history: PropTypes.shape({
+      push: PropTypes.func,
+    }).isRequired,
+  };
+
+
+  static contextType = Context;
 
   handleFormSubmit = (e) => {
     console.log('hello')
@@ -56,6 +69,23 @@ export default class Form extends Component {
             />
           </div>
           <div className='formInfo'>
+            <label htmlFor='phone'>
+              Phone:
+              {' '}
+              <Required /> {' '}
+            </label>
+            <br></br>
+            <input
+              type='number'
+              name='phone'
+              id='phone'
+              aria-label="phone"
+              placeholder='###-###-####'
+              onChange={this.handlePhone}
+              required
+            />
+          </div>
+          {/* <div className='formInfo'>
             <label htmlFor='type' onChange={this.handleType}>
               Event Type:
               <br></br>
@@ -72,12 +102,8 @@ export default class Form extends Component {
                 <option>Other</option>
               </select>
             </label>
-            {/* <input
-              type='submit'
-              value='Submit'
-            /> */}
-          </div>
-          <div className='formInfo'>
+          </div> */}
+          {/* <div className='formInfo'>
             <label htmlFor='company'>
               Company (Corporate Only):
             </label>
@@ -90,8 +116,25 @@ export default class Form extends Component {
               // placeholder='LA'
               onChange={this.handleCompany}
             />
-          </div>
+          </div> */}
           <div className='formInfo'>
+            <label htmlFor='date'>
+            Event Date:
+              {' '}
+              <Required /> {' '}
+            </label>
+            <br></br>
+            <input
+              type='text'
+              name='date'
+              id='date'
+              aria-label="date"
+              placeholder='MM/DD/YYYY'
+              onChange={this.handleEventDate}
+              required
+            />
+          </div>
+          {/* <div className='formInfo'>
             <label htmlFor='date' onChange={this.handleEventDate}>
               Event Date:
             </label>
@@ -100,11 +143,12 @@ export default class Form extends Component {
               // selected={this.state.startDate}
               onChange={this.handleChange} className='input'
             />
-          </div>
+          </div> */}
           <div className='formInfo'>
             <label htmlFor='location'>
               Event Location (Venue):
               {' '}
+              <Required /> {' '}
             </label>
             <br></br>
             <input
@@ -113,7 +157,25 @@ export default class Form extends Component {
               id='location'
               // defaultValue='N/A'
               onChange={this.handleEventLocation}
+              required
             />
+          </div>
+          <div className='formInfo'>
+            <label htmlFor='type' onChange={this.handlePackage}>
+              Select Package:
+              {' '}
+              <Required /> {' '}
+              <br></br>
+              <select required>
+                <option>--Select--</option>
+                <option>25 drinks | 1 Hour of Service | $400</option>
+                <option>50 drinks | 1 Hour of Service | $500</option>
+                <option>75 drinks | 1 Hour of Service | $550</option>
+                <option>100 drinks | 1 Hour of Service | $650</option>
+                <option>150 drinks | 1 Hour of Service | $700</option>
+                <option>Custom Event (Please fill out "Additional Request" field)</option>
+              </select>
+            </label>
           </div>
           <div className='formInfo'>
             <label htmlFor='guest'>
@@ -130,8 +192,22 @@ export default class Form extends Component {
             />
           </div>
           <div className='formInfo'>
+            <label htmlFor='eventInfo'>
+            Please Tell Us About Your Event:
+              {' '}
+            </label>
+            <br></br>
+            <input
+              type='text'
+              name='eventInfo'
+              id='eventInfo'
+              // defaultValue='N/A'
+              onChange={this.handleEventInfo}
+            />
+          </div>
+          <div className='formInfo'>
             <label htmlFor='notes'>
-              Tell Us More:
+              Additional Requests:
             </label>
             <br></br>
             <textarea
@@ -141,7 +217,7 @@ export default class Form extends Component {
               onChange={this.handleNotes}
             />
            </div>
-          <div className='formInfo'>
+          {/* <div className='formInfo'>
             <label htmlFor='inquiry' onChange={this.handleInquiry}>
               Please Provide:
               <br></br>
@@ -152,8 +228,7 @@ export default class Form extends Component {
                 <option>Invoice</option>
               </select>
             </label>
-          </div>
-
+          </div> */}
           <div className='form__button'>
             <button type='submit'>Let's Brew!</button>
           </div>
