@@ -1,5 +1,5 @@
 export default {
-  UID: 'user_eO44YUYviTksKNe1APtXx',
-  SID: 'sparrow_coffee',
-  CID: 'sparrow_coffee_contact_form'
+  UID: 'user_4ZOmWaTgaYueyviHa4ZQJ',
+  SID: 'book_event',
+  CID: 'lets_chat'
 }
