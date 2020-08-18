@@ -17,7 +17,7 @@ const Menu = ({ open, ...props }) => {
       <a href="/team" tabIndex={tabIndex}>
         Our Team
       </a>
-      <a href="/chat" tabIndex={tabIndex}>
+      <a href="/contact" tabIndex={tabIndex}>
         Let's Chat
       </a>
     </StyledMenu>

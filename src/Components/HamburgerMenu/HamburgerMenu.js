@@ -25,7 +25,7 @@ function HamburgerMenu() {
         </div>
         <div className='navOp topRight'>
           <a className='navButton navBa' href="/team">Our Team</a>
-          <a className='navButton navBb'href="/chat">Let's Chat</a>
+          <a className='navButton navBb'href="/contact">Let's Chat</a>
         </div>
   
       </div>        

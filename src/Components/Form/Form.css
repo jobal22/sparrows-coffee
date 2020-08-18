@@ -34,11 +34,11 @@ textarea {
   margin: 10px 0 10px 0;
   border: 1px solid #BABABA;
   border-radius: 4px;
-  height: 25px;
+  height: 65px;
 }
 
 select {
-  width: 102%;
+  width: 100%;
   margin: 10px 0 10px 0;
   border: 1px solid #BABABA;
   border-radius: 4px;
@@ -72,6 +72,7 @@ select {
 @media screen and (min-width: 600px) {
   .form {
     width: 400px;
+    margin-top: 0;
     /* margin-top: 0; */
   }
 

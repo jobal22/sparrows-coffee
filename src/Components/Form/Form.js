@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+// import DatePicker from "react-datepicker";
+// import "react-datepicker/dist/react-datepicker.css";
 import Context from '../../context';
-import './Form.css'
+import emailjs from 'emailjs-com';
+import config from '../../.config';
+import Swal from 'sweetalert2';
+import {normalizeInput, vlidateInput} from '../../helpers';
+import PhoneInput from 'react-phone-number-input/input';
+import './Form.css';
 
 const Required = () => (
   <span className='AddAddress__required'>(required)</span>
@@ -20,22 +25,152 @@ export default class Form extends Component {
     }).isRequired,
   };
 
-
   static contextType = Context;
 
-  handleFormSubmit = (e) => {
-    console.log('hello')
+  state = {
+    name: {
+      touched: false,
+      value: '',
+    },
+    email: {
+      touched: false,
+      value: '',
+    },
+    phone: {
+      touched: false,
+      value: '',
+    },
+    date: {
+      touched: false,
+      value: '',
+    },
+    location: {
+      touched: false,
+      value: '',
+    },
+    packageOption: {
+      touched: false,
+      value: '',
+    },
+    eventInfo: {
+      touched: false,
+      value: '',
+    },
+    notes: {
+      touched: false,
+      value: '',
+    }
   }
 
+  handleName = (e) => {
+    let {name} = this.state
+    name.value = e.target.value
+    this.setState({name})
+  }
+
+  handleEmail = (e) => {
+    let {email} = this.state
+    email.value = e.target.value
+    this.setState({email})
+  }
+
+  handlePhone= (e) => {
+    let {phone} = this.state
+    phone.value = e.target.value
+    this.setState({phone})
+    console.log('look', {phone})
+  }
+
+  handleEventDate = (e) => {
+    let {date} = this.state
+    date.value = e.target.value
+    this.setState({date})
+  }
+  
+  handleEventLocation = (e) => {
+    let {location} = this.state
+    location.value = e.target.value
+    this.setState({location})
+  }
+
+  handlePackage = (e) => {
+    let {packageOption} = this.state
+    packageOption.value = e.target.value
+    this.setState({packageOption})
+  }
+
+  handleEventInfo = (e) => {
+    let {eventInfo} = this.state
+    eventInfo.value = e.target.value
+    this.setState({eventInfo})
+  }
+
+  handleNotes = (e) => {
+    let {notes} = this.state
+    notes.value = e.target.value
+    this.setState({notes})
+  }
+
+  handleFormSubmit = (e) => {
+    e.preventDefault(e)
+    const newGuest = {
+      name: this.state.name.value,
+      email: this.state.email.value,
+      phone: this.state.phone.value,
+      date: this.state.date.value,
+      location: this.state.location.value,
+      packageOption: this.state.packageOption.value,
+      eventInfo: this.state.eventInfo.value,
+      notes: this.state.notes.value,
+    }
+    // console.log(newGuest)
+    const props = this.props.props
+    Swal.fire({title: 'Booking Information Sent!', width: 300, confirmButtonColor: '#9CA7AD'})
+    .then(() => {
+    props.history.push('/')})
+    .catch(error => {
+      Swal.fire({title: 'Oops!', text: 'Booking information failed', width: 300, confirmButtonColor: '#9CA7AD'})
+      console.error(error)
+      this.setState({ error })
+    })
+    emailjs.sendForm('gmail', `${config.SID}`, e.target, `${config.UID}`)
+    .then((result) => {
+        console.log(result.text);
+    }, (error) => {
+        console.log(error.text);
+    });
+
+  }
+
+  // sendEmail (event) {
+  //   event.preventDefault();
+  //   emailjs.sendForm('gmail', `${config.SID}`, event.target, `${config.UID}`)
+  //     .then((result) => {
+  //         console.log(result.text);
+  //     }, (error) => {
+  //         console.log(error.text);
+  //     });
+  // }
+
   render() {
+    console.log('jobal look', this.props.props.history)
+    const phoneValue = this.state.phone.value;
+    const phoneFirstThree = phoneValue.substring(0,3);
+    const phoneNextThree = phoneValue.substring(3,6);
+    const phoneNextFour = phoneValue.substring(6,10);
+    function formatPhone (x,y,z) {
+      return `(${x}) ${y}-${z}`
+    }
+    // const [value,setValue] = useState();
     return (
       <div className='form'>
         <form
           className='book__form'
           onSubmit={(e) => this.handleFormSubmit(e)}
+          // onSubmit={this.sendEmail}
         >
           <div className='formInfo'>
-            <label htmlFor='FullName'>
+            <label htmlFor='name'>
               Full Name:
               {' '}
               <Required /> {' '}
@@ -76,14 +211,27 @@ export default class Form extends Component {
             </label>
             <br></br>
             <input
-              type='number'
+              type='text'
               name='phone'
               id='phone'
               aria-label="phone"
-              placeholder='###-###-####'
+              placeholder='(###) ###-####'
+              value= {formatPhone(phoneFirstThree, phoneNextThree,phoneNextFour)}
+
               onChange={this.handlePhone}
               required
             />
+            {/* <PhoneInput
+              defaultCountry="US"
+              // value={value}
+              type='text'
+              name='phone'
+              id='phone'
+              aria-label="phone"
+              placeholder='(###) ###-####'
+              required
+              onChange={this.handlePhone}
+            /> */}
           </div>
           {/* <div className='formInfo'>
             <label htmlFor='type' onChange={this.handleType}>
@@ -125,7 +273,7 @@ export default class Form extends Component {
             </label>
             <br></br>
             <input
-              type='text'
+              type='date'
               name='date'
               id='date'
               aria-label="date"
@@ -161,23 +309,23 @@ export default class Form extends Component {
             />
           </div>
           <div className='formInfo'>
-            <label htmlFor='type' onChange={this.handlePackage}>
+            <label htmlFor='packageOption'>
               Select Package:
               {' '}
               <Required /> {' '}
               <br></br>
-              <select required>
-                <option>--Select--</option>
-                <option>25 drinks | 1 Hour of Service | $400</option>
-                <option>50 drinks | 1 Hour of Service | $500</option>
-                <option>75 drinks | 1 Hour of Service | $550</option>
-                <option>100 drinks | 1 Hour of Service | $650</option>
-                <option>150 drinks | 1 Hour of Service | $700</option>
-                <option>Custom Event (Please fill out "Additional Request" field)</option>
+              <select required name='packageOption' id='packageOption' onChange={this.handlePackage}>
+                <option value=''>--Select--</option>
+                <option value='25 drinks | 1 Hour of Service | $400'>25 drinks | 1 Hour of Service | $400</option>
+                <option value='50 drinks | 1 Hour of Service | $500'>50 drinks | 1 Hour of Service | $500</option>
+                <option value='75 drinks | 1 Hour of Service | $550'>75 drinks | 1 Hour of Service | $550</option>
+                <option value='100 drinks | 1 Hour of Service | $650'>100 drinks | 1 Hour of Service | $650</option>
+                <option value='150 drinks | 1 Hour of Service | $700'>150 drinks | 1 Hour of Service | $700</option>
+                <option value='Custom Event (Please fill out "Additional Request" field)'>Custom Event (Please fill out "Additional Request" field)</option>
               </select>
             </label>
           </div>
-          <div className='formInfo'>
+          {/* <div className='formInfo'>
             <label htmlFor='guest'>
               Expected Guests:
               {' '}
@@ -190,7 +338,7 @@ export default class Form extends Component {
               // defaultValue='N/A'
               onChange={this.handleExpectedGuests}
             />
-          </div>
+          </div> */}
           <div className='formInfo'>
             <label htmlFor='eventInfo'>
             Please Tell Us About Your Event:
