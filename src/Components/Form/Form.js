@@ -159,6 +159,13 @@ export default class Form extends Component {
     const phoneNextThree = phoneValue.substring(3,6);
     const phoneNextFour = phoneValue.substring(6,10);
     function formatPhone (x,y,z) {
+      if (x.length < 3) {
+        return x
+      } else if (y.length < 3) {
+        return x + y
+      } else if (z.length < 4) {
+        return x + y + z
+      } else
       return `(${x}) ${y}-${z}`
     }
     // const [value,setValue] = useState();
@@ -214,6 +221,7 @@ export default class Form extends Component {
               type='text'
               name='phone'
               id='phone'
+              maxLength='10'
               aria-label="phone"
               placeholder='(###) ###-####'
               value= {formatPhone(phoneFirstThree, phoneNextThree,phoneNextFour)}
