@@ -6,6 +6,13 @@ import seventyfive from '../../Img/75.png';
 import hundred from '../../Img/100.png';
 import hundredfifty from '../../Img/150.png';
 import plus from '../../Img/Plus.png';
+import onehour from '../../Img/1hour.png';
+import twohour from '../../Img/2hour.png';
+import threehour from '../../Img/3hour.png';
+import fourhour from '../../Img/4hour.png';
+import fivehour from '../../Img/5hour.png';
+import custom from '../../Img/custom.png';
+
 import './AboutUs.css';
 
 export default class AboutUs extends Component {
@@ -32,32 +39,37 @@ export default class AboutUs extends Component {
           <div className='priceCollection'>
             <div className='priceOptions'>
               <div className='prices'>
-                <img className='priceLogo' src={twentyfive}/>
-                <p className='priceInfo'>$400 | 1 Hour</p>
+                <img className='priceLogo' src={onehour}/>
+                <p className='priceInfo'>$350 | 50 guests</p>
               </div>
               <div className='prices'>
-                <img className='priceLogo' src={fifty}/>
-                <p className='priceInfo'>$500 | 1 Hour</p>
+                <img className='priceLogo' src={twohour}/>
+                <p className='priceInfo'>$700 | 100 guests</p>
               </div>
               <div className='prices'>
-                <img className='priceLogo' src={seventyfive}/>
-                <p className='priceInfo'>$550 | 1 Hour</p>
+                <img className='priceLogo' src={threehour}/>
+                <p className='priceInfo'>$1050 | 150 guests</p>
               </div>
+              <div className='prices'>
+                <img className='priceLogo' src={custom}/>
+                <p className='priceInfo'>Customize Your Event</p>
+              </div>
+
             </div>
-            <div className='priceOptions'>
+            {/* <div className='priceOptions'>
               <div className='prices'>
-                <img className='priceLogo' src={hundred}/>
-                <p className='priceInfo'>$650 | 1 Hour</p>
+                <img className='priceLogo' src={fourhour}/>
+                <p className='priceInfo'>$650</p>
               </div>
               <div className='prices'>
-                <img className='priceLogo' src={hundredfifty}/>
-                <p className='priceInfo'>$700 | 1 Hour</p>
+                <img className='priceLogo' src={fivehour}/>
+                <p className='priceInfo'>$700</p>
               </div>
               <div className='prices'>
-                <img className='priceLogo' src={plus}/>
-                <p className='priceInfo'>Customize</p>
+                <img className='priceLogo' src={custom}/>
+                <p className='priceInfo'>Customize Your Event</p>
               </div>
-            </div>
+            </div> */}
           </div>
         </section>
         {/* <section className='passion custom'>
