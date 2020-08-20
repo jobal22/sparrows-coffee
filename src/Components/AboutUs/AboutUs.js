@@ -27,7 +27,7 @@ export default class AboutUs extends Component {
         </section>
         <section className='passion'>
           <h3>Our Passion</h3>
-          <p>Sparrows Coffee Cart is a mobile craft coffee that offers an elevated beverage experience for weddings, events, and corporate functions. Since we believe everyone deserves great coffee, we literally bring the cafe experience directly to you. Life’s too short for bad brew, so turn your office, venue, expo booth, or home into a craft beverage lounge full of celebration, excitement, and, of course, great coffee.</p>
+          <p>Who says no to coffee? Did you know a person’s ability to smell can evoke particular memories; the scent of a freshly pulled shot of espresso will bring your guests back to that star-lit night they were given the opportunity to sip on a drink they just could not forget. You bring the people, we bring the coffee. Let us make your dreams come true by providing not only the best coffee but enhancing your event that allows you to sit down and enjoy..... Or get up and get more. At Sparrows, there is no limit. We are committed to offering you the best coffee at your next event!</p>
         </section>
         <section className='teamMember'>
           <h1>Coffee with Personality</h1>
