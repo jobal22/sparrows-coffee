@@ -101,7 +101,7 @@ export default function AboutUs() {
           <button><Link className='aboutUsLink' to={`/team`}>Meet Our Team</Link></button>
         </div>
       </section>
-      {/* <section className='passion custom'>
+      <section className='passion custom'>
         <div className='custom__background'/>
         <h3>Packages</h3>
         <p>Choose which package best fits your event.  We will have enough product to serve one drink to all your guests and an additional 10%, just in case.  Make your selection when filling out the booking form.</p>
@@ -125,7 +125,7 @@ export default function AboutUs() {
             </div>
           </div>
         </div>
-      </section> */}
+      </section>
     </div>
   )
 }
