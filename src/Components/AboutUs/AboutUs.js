@@ -1,16 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import twentyfive from '../../Img/25.png';
-import fifty from '../../Img/50.png';
-import seventyfive from '../../Img/75.png';
-import hundred from '../../Img/100.png';
-import hundredfifty from '../../Img/150.png';
-import plus from '../../Img/Plus.png';
 import onehour from '../../Img/1hour.png';
 import twohour from '../../Img/2hour.png';
 import threehour from '../../Img/3hour.png';
-import fourhour from '../../Img/4hour.png';
-import fivehour from '../../Img/5hour.png';
 import custom from '../../Img/custom.png';
 
 import './AboutUs.css';

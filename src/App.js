@@ -7,6 +7,7 @@ import AboutUs from './Components/AboutUs/AboutUs';
 import Book from './Components/Book/Book';
 import Team from './Components/Team/Team';
 import Contact from './Components/Contact/Contact';
+import config from './.config';
 import './App.css';
 
 export default class App extends Component {
@@ -72,10 +73,10 @@ export default class App extends Component {
             <li><Link className='footLink'>CONTACT US</Link></li>
           </ol> */}
           <ol className='footIcon'>
-            {/* <li><Link className='fIcon far fa-envelope'></Link></li> */}
-            <li><Link className='fIcon fab fa-linkedin-in'></Link></li>
-            <li><Link className='fIcon fab fa-facebook-f'></Link></li>
-            <li><Link className='fIcon fab fa-instagram'></Link></li>
+            <li><a className='fIcon far fa-envelope' href={`mailto:${config.email}`} target='_blank'></a></li>
+            <li><a className='fIcon fab fa-linkedin-in'></a></li>
+            {/* <li><Link className='fIcon fab fa-facebook-f'></Link></li> */}
+            <li><a className='fIcon fab fa-instagram' href='https://www.instagram.com/sparrowscoffeega/' target='_blank'></a></li>
           </ol>
           <p>COPYRIGHT © 2020 SPARROWS COFFEE CO. | ALL RIGHTS RESERVED</p>
         </footer>

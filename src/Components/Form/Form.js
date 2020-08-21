@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import PropTypes from 'prop-types';
 // import DatePicker from "react-datepicker";
 // import "react-datepicker/dist/react-datepicker.css";
@@ -7,7 +7,8 @@ import emailjs from 'emailjs-com';
 import config from '../../.config';
 import Swal from 'sweetalert2';
 import {normalizeInput, vlidateInput} from '../../helpers';
-import PhoneInput from 'react-phone-number-input/input';
+import PhoneInput from 'react-phone-input-2';
+// import 'react-phone-input-2/lib/style.css';
 import './Form.css';
 
 const Required = () => (
@@ -76,9 +77,9 @@ export default class Form extends Component {
 
   handlePhone= (e) => {
     let {phone} = this.state
-    phone.value = e.target.value
+    //took off .target.value due to not working with react-phone-input-2
+    phone.value = e
     this.setState({phone})
-    console.log('look', {phone})
   }
 
   handleEventDate = (e) => {
@@ -123,7 +124,7 @@ export default class Form extends Component {
       eventInfo: this.state.eventInfo.value,
       notes: this.state.notes.value,
     }
-    // console.log(newGuest)
+    console.log(newGuest)
     const props = this.props.props
     Swal.fire({title: 'Booking Information Sent!', width: 300, confirmButtonColor: '#9CA7AD'})
     .then(() => {
@@ -139,7 +140,6 @@ export default class Form extends Component {
     }, (error) => {
         console.log(error.text);
     });
-
   }
 
   // sendEmail (event) {
@@ -153,22 +153,21 @@ export default class Form extends Component {
   // }
 
   render() {
-    console.log('jobal look', this.props.props.history)
-    const phoneValue = this.state.phone.value;
-    const phoneFirstThree = phoneValue.substring(0,3);
-    const phoneNextThree = phoneValue.substring(3,6);
-    const phoneNextFour = phoneValue.substring(6,10);
-    function formatPhone (x,y,z) {
-      if (x.length < 3) {
-        return x
-      } else if (y.length < 3) {
-        return x + y
-      } else if (z.length < 4) {
-        return x + y + z
-      } else
-      return `(${x}) ${y}-${z}`
-    }
-    // const [value,setValue] = useState();
+    // console.log('jobal look', this.props.props.history)
+    // const phoneValue = this.state.phone.value;
+    // const phoneFirstThree = phoneValue.substring(0,3);
+    // const phoneNextThree = phoneValue.substring(3,6);
+    // const phoneNextFour = phoneValue.substring(6,10);
+    // function formatPhone (x,y,z) {
+    //   if (x.length < 3) {
+    //     return x
+    //   } else if (y.length < 3) {
+    //     return x + y
+    //   } else if (z.length < 4) {
+    //     return x + y + z
+    //   } else
+    //   return `(${x}) ${y}-${z}`
+    // }
     return (
       <div className='form'>
         <form
@@ -210,7 +209,7 @@ export default class Form extends Component {
               required
             />
           </div>
-          <div className='formInfo'>
+          {/* <div className='formInfo'>
             <label htmlFor='phone'>
               Phone:
               {' '}
@@ -229,18 +228,47 @@ export default class Form extends Component {
               onChange={this.handlePhone}
               required
             />
+            </div> */}
+          <div className='formInfo'>
+            <label htmlFor='phone'>
+              Phone:
+              {' '}
+              <Required /> {' '}
+            </label>
+            <br></br>
+            <PhoneInput
+              // className='phoneInfo'
+              // className='form-control'
+              country='us'
+              regions={'north-america'}
+              value={'this.state.phone.value'}
+              // disableDropdown='true'
+              disableCountryCode='true'
+              inputProps={{
+                name: 'phone',
+                required: true,
+                autoFocus: true,
+                // className: 'red',
+                placeholder:'(###) ###-####',
+              }}
+              onChange={this.handlePhone}
+            />
+          </div>
+
             {/* <PhoneInput
-              defaultCountry="US"
-              // value={value}
-              type='text'
-              name='phone'
-              id='phone'
-              aria-label="phone"
-              placeholder='(###) ###-####'
-              required
+              country='us'
+              regions={'north-america'}
+              value={'this.state.phone.value'}
+              disableDropdown='true'
+              disableCountryCode='true'
+              inputProps={{
+                name: 'phone',
+                required: true,
+                autoFocus: true,
+                placeholder:'(###) ###-####',
+              }}
               onChange={this.handlePhone}
             /> */}
-          </div>
           {/* <div className='formInfo'>
             <label htmlFor='type' onChange={this.handleType}>
               Event Type:

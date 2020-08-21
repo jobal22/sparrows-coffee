@@ -1,5 +1,6 @@
 export default {
   UID: 'user_4ZOmWaTgaYueyviHa4ZQJ',
   SID: 'book_event',
-  CID: 'lets_chat'
+  CID: 'lets_chat',
+  email: 'sparrowscoffeega@gmail.com'
 }
