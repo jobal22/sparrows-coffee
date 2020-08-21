@@ -31,13 +31,14 @@
 .App__footer {
   position: absolute;
   width: 100%;
-  bottom: 0;
+  bottom: -1500px;
   background-color: #BABABA;
   color: white;
   padding-top: 23px;
   padding-bottom: 1px;
   font-size: 8px;
   font-family: 'Montserrat', sans-serif;
+  z-index: 1;
   /* background-image: url('./Img/woods.jpg');
   background-position: center;
   background-repeat: no-repeat;
