@@ -2,57 +2,65 @@
   padding-top: 80px;
 }
 
-.teamMember {
+.bookEvent  {
+  display: flex;
+  justify-content: center;
   font-family: 'Hind', sans-serif;
   font-style: normal;
-  padding-top: 50%;
+  /* padding-top: 50%; */
   background-color: transparent;
-  min-width: 280px;
-  min-height: 618.3px;
+  /* min-width: 280px;
+  min-height: 618.3px; */
   color: #FFF;
-  background-attachment: fixed;
+  /* background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
 }
 
-.bookEvent {
+/* .bookEvent {
   background-image: url('../../Img/latte.jpg');
-  font-family: 'Hind', sans-serif;
-  font-style: normal;
-  padding-top: 50%;
-  background-color: transparent;
-  min-width: 280px;
-  min-height: 618.3px;
-  color: #FFF;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-	background-color: #FAFAFA;
-	position:relative;
-	overflow:hidden;
 }
 
 .teamMember {
   background-image: url('../../Img/cam.jpg');
+} */
+
+.bookEvent__background {
+  width: 100%;
+  /* height: 1280px; */
+  height: 800px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  background-image: url('../../Img/latte.jpg');
+}
+
+.bookEvent__content {
+  width: 1080px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+  margin-top: 120px;
+  margin-bottom: 120px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .custom {
   margin-bottom: 40px;
 }
 
-.bookEvent > h1, .teamMember > h1 {
-  font-size: 55px;
-  line-height: 1em;
+.bookEvent__content > h1, .teamMember__content  > h1 {
+  font-size: 50px;
+  line-height: 1.5em;
   letter-spacing: .01em;
   text-transform: none;
 }
 
-.bookEvent > button, .teamMember > button {
+.bookEvent__content > button, .teamMember__content  > button {
   border: none;
   cursor: pointer;
   background-color: #FFF;
@@ -60,7 +68,40 @@
   padding: 21px 34px;
 }
 
+/* .passion {
+  position: relative;
+} */
+
 .passion {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  text-align: left;
+  /* padding-top: 240px; */
+  margin-top: 100px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  /* margin-left: 20px;
+  margin-right: 20px;
+  max-width: 700px; */
+  position: relative;
+  z-index: 1;
+}
+
+
+.passion__background {
+  /* margin-top: 200px; */
+  height: 750px;
+  width: 100%;
+  background-color: #FAFAFA;
+  /* background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; */
+  position: absolute;
+
+  /* color: white; */
+}
+
+/* .passion__content {
   font-family: 'Montserrat', sans-serif;
   font-size: 18px;
   text-align: left;
@@ -68,17 +109,33 @@
   margin-left: 20px;
   margin-right: 20px;
   max-width: 700px;
-}
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+
+} */
 
 .passion > h3 {
+  position: absolute;
   font-size: 23px;
-  margin: 0px 0px 23.24px;
+  margin: 50px 0px 23.24px;
   color: #525252;
+  z-index: 1;
+  margin-left: 40px;
+  margin-right: 40px;
+  max-width: 700px;
+
 }
 
 .passion > p {
-  margin: 18px 0px 0px;
+  position: absolute;
+  margin: 110px 0px 0px;
   color: #14141480;
+  z-index: 1;
+  margin-left: 40px;
+  margin-right: 40px;
+  max-width: 700px;
+
 }
 
 .aboutUsLink {
@@ -89,6 +146,53 @@
   text-transform: uppercase;
   letter-spacing: .2em;
   text-decoration: none;
+}
+
+/* .teamMember {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  text-align: left;
+  padding: 0px 0px;
+  margin: 900px;
+
+} */
+.teamMember  {
+  display: flex;
+  justify-content: center;
+  font-family: 'Hind', sans-serif;
+  font-style: normal;
+  /* padding-top: 50%; */
+  background-color: transparent;
+  /* min-width: 280px;
+  min-height: 618.3px; */
+  margin-top: 900px;
+  color: #FFF;
+  /* background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; */
+}
+
+.teamMember__background {
+  width: 100%;
+  /* height: 1280px; */
+  height: 1100px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  background-image: url('../../Img/cam.jpg');
+  /* z-index: 2px; */
+
+}
+
+.teamMember__content {
+  width: 1080px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+  margin-top: 220px;
 }
 
 .priceCollection {
