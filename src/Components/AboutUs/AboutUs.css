@@ -2,7 +2,7 @@
   padding-top: 80px;
 }
 
-.bookEvent, .teamMember {
+.teamMember {
   font-family: 'Hind', sans-serif;
   font-style: normal;
   padding-top: 50%;
@@ -18,6 +18,23 @@
 
 .bookEvent {
   background-image: url('../../Img/latte.jpg');
+  font-family: 'Hind', sans-serif;
+  font-style: normal;
+  padding-top: 50%;
+  background-color: transparent;
+  min-width: 280px;
+  min-height: 618.3px;
+  color: #FFF;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+	background-color: #FAFAFA;
+	position:relative;
+	overflow:hidden;
 }
 
 .teamMember {
