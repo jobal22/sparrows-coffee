@@ -28,8 +28,10 @@
 
 .bookEvent__background {
   width: 100%;
+  left: 0;
+  right: 0;
   /* height: 1280px; */
-  height: 800px;
+  height: 70vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -47,10 +49,6 @@
   margin-bottom: 120px;
   margin-left: 20px;
   margin-right: 20px;
-}
-
-.custom {
-  margin-bottom: 40px;
 }
 
 .bookEvent__content > h1, .teamMember__content  > h1 {
@@ -196,6 +194,10 @@
   margin-bottom: 140px;
 }
 
+.custom {
+  margin-bottom: 40px;
+}
+
 .custom__background {
   height: 1500px;
   width: 100%;
@@ -248,19 +250,20 @@
 
 @media screen and (min-width: 768px) {
   .aboutUs {
-    padding-top: 175px;
-  }
+    padding-top: 140px;
+  }  
 
-  .bookEvent, .teamMember {
+  /* .bookEvent, .teamMember {
     padding-top: 30%;
     padding-bottom: 30%;
-  }
+  } */
   
-  .bookEvent > h1, .teamMember > h1 {
+  
+  .bookEvent__content > h1, .teamMember > h1 {
     font-size: 100px;
   }
   
-  .bookEvent > button, .teamMember > button {
+  .bookEvent__content > button, .teamMember > button {
     font-size: 25px;
     padding: 31px 44px;
   }

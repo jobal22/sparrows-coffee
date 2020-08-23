@@ -1,5 +1,6 @@
 import React, { Component, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import Footer from '../../Footer/Footer';
 import onehour from '../../Img/1hour.png';
 import twohour from '../../Img/2hour.png';
 import threehour from '../../Img/3hour.png';
@@ -126,6 +127,7 @@ export default function AboutUs() {
           </div>
         </div>
       </section>
+      {/* <Footer /> */}
     </div>
   )
 }
