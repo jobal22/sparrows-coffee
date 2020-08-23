@@ -31,7 +31,8 @@
   left: 0;
   right: 0;
   /* height: 1280px; */
-  height: 70vh;
+  height: 800px;
+  max-height: 800px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
