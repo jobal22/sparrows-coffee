@@ -196,11 +196,11 @@
 }
 
 .custom {
-  margin-bottom: 110px;
+  margin-bottom: 40px;
 }
 
 .custom__background {
-  height: 1500px;
+  height: 1600px;
   width: 100%;
   background-color: #FAFAFA;
   /* background-position: center;
@@ -252,7 +252,7 @@
 .AU__footer {
   position: absolute;
   width: 100%;
-  bottom: -1450px;
+  bottom: -1500px;
   background-color: #BABABA;
   color: white;
   padding-top: 23px;
@@ -317,6 +317,10 @@
     flex-direction: row;
     justify-content: space-evenly;
   }
+
+  .custom {
+    margin-bottom: 40px;
+  }  
 
   .custom__background {
     height: 800px;
