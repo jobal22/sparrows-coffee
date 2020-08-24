@@ -41,7 +41,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   position: fixed;
-  background-image: url('../../Img/latte.jpg');
+  background-image: url('../../Img/twolatte.jpg');
   /* margin-bottom: 100px;
   background-color: #FAFAFA; */
 }
@@ -63,6 +63,8 @@
   line-height: 1.5em;
   letter-spacing: .01em;
   text-transform: none;
+  text-shadow: 1px 1px 4px rgb(97, 97, 97);
+
 }
 
 .bookEvent__content > button, .teamMember__content  > button {
@@ -255,7 +257,7 @@
   position: absolute;
   width: 100%;
   bottom: -1500px;
-  background-color: #BABABA;
+  background-color: #a2c3d3;
   color: white;
   padding-top: 23px;
   padding-bottom: 1px;
