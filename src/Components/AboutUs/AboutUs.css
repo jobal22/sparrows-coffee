@@ -1,5 +1,9 @@
 .aboutUs {
   padding-top: 80px;
+  background-color: #FAFAFA;
+  
+  /* display: flex;
+  flex-direction: column; */
 }
 
 .bookEvent  {
@@ -72,6 +76,8 @@
 } */
 
 .passion {
+  display: flex;
+  justify-content: center;
   font-family: 'Montserrat', sans-serif;
   font-size: 18px;
   text-align: left;
@@ -79,9 +85,6 @@
   margin-top: 100px;
   margin-bottom: 0;
   padding-bottom: 0;
-  /* margin-left: 20px;
-  margin-right: 20px;
-  max-width: 700px; */
   position: relative;
   z-index: 1;
 }
@@ -120,8 +123,9 @@
   margin: 50px 0px 23.24px;
   color: #525252;
   z-index: 1;
-  margin-left: 40px;
-  margin-right: 40px;
+  /* margin-left: 40px;
+  margin-right: 40px; */
+  /* left: 21%; */
   max-width: 700px;
 
 }
@@ -133,8 +137,7 @@
   z-index: 1;
   margin-left: 40px;
   margin-right: 40px;
-  max-width: 700px;
-
+  max-width: 250px;
 }
 
 .aboutUsLink {
@@ -249,6 +252,12 @@
   color: #525252;
 }
 
+@media screen and (min-width: 768px) and (max-width: 800px) {
+  .priceLogo {
+    width: 150px;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .aboutUs {
     padding-top: 140px;
@@ -266,33 +275,48 @@
   
   .bookEvent__content > button, .teamMember > button {
     font-size: 25px;
-    padding: 31px 44px;
+    padding: 20px 44px;
   }
-  
+
   .passion {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
-    /* min-width: 280px; */
-    text-align: left;
     padding: 100px;
-    /* min-height: 618.3px; */
     margin-left: auto;
     margin-right: auto;
   }
+
+  .passion__background {
+    height: 600px;
+  }
   
   .passion > h3 {
+    margin-top: 100px;
     font-size: 28px;
+    max-width: 700px;
+  }
+
+  .passion > p {
+    margin-top: 200px;
+    margin-right: 40px;
+    max-width: 500px;
+  }
+
+  .teamMember {
+    margin-top: 600px;
   }
 
   .priceCollection {
-    margin-top: 20px;
+    margin-top: 375px;
+    max-width: 700px;
   }
 
   .priceOptions {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+  }
 
+  .custom__background {
+    height: 800px;
   }
   
 }
