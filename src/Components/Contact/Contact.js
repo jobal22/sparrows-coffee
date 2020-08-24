@@ -81,70 +81,72 @@ class Contact extends Component {
     console.log(this.props)
     return (
       <div className='contact'>
-        <div className='contactFormat'>
-          <section className='contactInfo'>
-            <h3>Let's Chat</h3>
-          </section>
-          <section>
-            <form 
-              className='contact__form'
-              onSubmit={this.submitForm.bind(this)}
-              // onSubmit={this.sendEmail}
-            >
-              <div className='formInfo'>
-                <label htmlFor='name'>
-                  Full Name:
-                  {' '}
-                  <Required /> {' '}
-                </label>
-                <br></br>
-                <input
-                  type='text'
-                  name='name'
-                  id='name'
-                  aria-label="Name"
-                  // placeholder='123 Lake Ln'
-                  onChange={this.handleName}
-                  required
-                />
+        <div className='contact__content'>
+          <div className='contactFormat'>
+            <section className='contactInfo'>
+              <h3>Let's Chat</h3>
+            </section>
+            <section>
+              <form 
+                className='contact__form'
+                onSubmit={this.submitForm.bind(this)}
+                // onSubmit={this.sendEmail}
+              >
+                <div className='formInfo'>
+                  <label htmlFor='name'>
+                    Full Name:
+                    {' '}
+                    <Required /> {' '}
+                  </label>
+                  <br></br>
+                  <input
+                    type='text'
+                    name='name'
+                    id='name'
+                    aria-label="Name"
+                    // placeholder='123 Lake Ln'
+                    onChange={this.handleName}
+                    required
+                  />
+                </div>
+                <div className='formInfo'>
+                  <label htmlFor='email'>
+                    Email:
+                    {' '}
+                    <Required /> {' '}
+                  </label>
+                  <br></br>
+                  <input
+                    type='text'
+                    name='email'
+                    id='email'
+                    aria-label="email"
+                    // placeholder='Fort Worth'
+                    onChange={this.handleEmail}
+                    required
+                  />
+                </div>
+                <div className='formInfo'>
+                  <label htmlFor='message'>
+                    Additional Requests:
+                    {' '}
+                    <Required /> {' '}
+                  </label>
+                  <br></br>
+                  <textarea
+                    name='message'
+                    id='message'
+                    // defaultValue='N/A'
+                    onChange={this.handleMessage}
+                    required
+                  />
               </div>
-              <div className='formInfo'>
-                <label htmlFor='email'>
-                  Email:
-                  {' '}
-                  <Required /> {' '}
-                </label>
-                <br></br>
-                <input
-                  type='text'
-                  name='email'
-                  id='email'
-                  aria-label="email"
-                  // placeholder='Fort Worth'
-                  onChange={this.handleEmail}
-                  required
-                />
+              <div className='form__button'>
+                <button type='submit'>Submit</button>
               </div>
-              <div className='formInfo'>
-                <label htmlFor='message'>
-                  Additional Requests:
-                  {' '}
-                  <Required /> {' '}
-                </label>
-                <br></br>
-                <textarea
-                  name='message'
-                  id='message'
-                  // defaultValue='N/A'
-                  onChange={this.handleMessage}
-                  required
-                />
-            </div>
-            <div className='form__button'>
-              <button type='submit'>Submit</button>
-            </div>
-            </form>
-          </section>
+              </form>
+            </section>
+          </div>
         </div>
         <Footer />
       </div>

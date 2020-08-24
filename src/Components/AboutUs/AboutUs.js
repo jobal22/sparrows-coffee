@@ -1,5 +1,6 @@
 import React, { Component, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import config from '../../.config';
 import Footer from '../../Footer/Footer';
 import onehour from '../../Img/1hour.png';
 import twohour from '../../Img/2hour.png';
@@ -127,7 +128,14 @@ export default function AboutUs() {
           </div>
         </div>
       </section>
-      {/* <Footer /> */}
+      <footer className="AU__footer">
+        <ol className='footIcon'>
+          <li><a className='fIcon far fa-envelope' href={`mailto:${config.email}`} target='_blank'></a></li>
+          <li><a className='fIcon fab fa-linkedin-in'></a></li>
+          <li><a className='fIcon fab fa-instagram' href='https://www.instagram.com/sparrowscoffeega/' target='_blank'></a></li>
+        </ol>
+        <p>COPYRIGHT © 2020 SPARROWS COFFEE CO. | ALL RIGHTS RESERVED</p>
+      </footer>
     </div>
   )
 }
