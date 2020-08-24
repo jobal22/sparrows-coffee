@@ -96,13 +96,13 @@ export default function AboutUs() {
         {/* </div> */}
       </section>
       <section className='teamMember'>
-        <img className='teamMember__background' style={{transform: `translateY(-${offsetY * 0.2}px)` }}/>
+        {/* <img className='teamMember__background' style={{transform: `translateY(-${offsetY * 0.8}px)` }}/> */}
         <div className='teamMember__content'>
           <h1>Coffee with Personality</h1>
           <button><Link className='aboutUsLink' to={`/team`}>Meet Our Team</Link></button>
         </div>
       </section>
-      <section className='passion custom'>
+      <section className='custom'>
         <div className='custom__background'/>
         <h3>Packages</h3>
         <p>Choose which package best fits your event.  We will have enough product to serve one drink to all your guests and an additional 10%, just in case.  Make your selection when filling out the booking form.</p>

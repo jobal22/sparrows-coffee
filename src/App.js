@@ -69,7 +69,7 @@ export default class App extends Component {
             </Context.Provider>
           </div>
         </div>
-        {/* <Footer /> */}
+        <Footer />
       </div>
     )
   }

@@ -117,7 +117,7 @@
 
 } */
 
-.passion > h3 {
+.passion > h3, .custom > h3 {
   position: absolute;
   font-size: 23px;
   margin: 50px 0px 23.24px;
@@ -130,7 +130,7 @@
 
 }
 
-.passion > p {
+.passion > p, .custom > p {
   position: absolute;
   margin: 110px 0px 0px;
   color: #14141480;
@@ -167,26 +167,32 @@
   background-color: transparent;
   /* min-width: 280px;
   min-height: 618.3px; */
-  margin-top: 900px;
+  margin-top: 700px;
   color: #FFF;
   /* background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover; */
+  width: 100%;
+  height: 900px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-attachment: scroll; */
+  position: relative;
+  background-image: url('../../Img/cam.jpg');
+
 }
 
-.teamMember__background {
+/* .teamMember__background {
   width: 100%;
-  /* height: 1280px; */
   height: 1200px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
   background-image: url('../../Img/cam.jpg');
-  /* z-index: 2px; */
-
-}
+} */
 
 .teamMember__content {
   width: 1080px;
@@ -194,16 +200,27 @@
   flex-direction: column;
   align-items: center;
   z-index: 1;
-  margin-top: 170px;
+  margin-top: 250px;
   margin-bottom: 140px;
 }
 
 .custom {
+  display: flex;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  text-align: left;
+  /* padding-top: 240px; */
+  margin-top: 0;
   margin-bottom: 40px;
+  padding-bottom: 0;
+  position: relative;
+  z-index: 1;
+
 }
 
 .custom__background {
-  height: 1500px;
+  height: 1580px;
   width: 100%;
   background-color: #FAFAFA;
   /* background-position: center;
@@ -218,6 +235,7 @@
   z-index: 1;
   position: absolute;
   margin-top: 300px;
+  padding-bottom: 50px;
   /* margin-left: 50% */
     /* display: flex;
   justify-content: center; */
@@ -234,7 +252,7 @@
 } */
 
 .prices {
-  margin-top: 30px;
+  margin-top: 50px;
   /* display: flex; */
   /* justify-content: center; */
   /* margin-left: auto;
@@ -301,11 +319,11 @@
   }
 
   .teamMember {
-    margin-top: 600px;
+    margin-top: 400px;
   }
 
   .priceCollection {
-    margin-top: 375px;
+    margin-top: 335px;
     max-width: 700px;
   }
 

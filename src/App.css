@@ -43,6 +43,10 @@
   text-align: center;
 }
 
+main {
+  overflow: auto;
+  padding-bottom: 100px;
+}
 
 /* .AppFooter {
   position: relative;
@@ -52,10 +56,6 @@
   width: 100%;
 } */
 
-/* .App__main {
-  padding-left: 20px;
-  padding-right: 20px;
-} */
 
 /* hr {
   width: 80%;
