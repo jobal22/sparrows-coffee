@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 import emailjs from 'emailjs-com';
 import config from '../../.config';
 import Swal from 'sweetalert2';
+import Footer from '../../Footer/Footer';
 import './Contact.css';
 
 const Required = () => (
@@ -145,6 +146,7 @@ class Contact extends Component {
             </form>
           </section>
         </div>
+        <Footer />
       </div>
     )
   }

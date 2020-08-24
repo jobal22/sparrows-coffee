@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Form from '../Form/Form';
+import Footer from '../../Footer/Footer';
 import './Book.css';
 
 export default class Book extends Component {
@@ -15,6 +16,7 @@ export default class Book extends Component {
         <section>
           <Form props={props}/>
         </section>
+        <Footer />
       </div>
     )
   }
