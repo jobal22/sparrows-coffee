@@ -35,13 +35,15 @@
   left: 0;
   right: 0;
   /* height: 1280px; */
-  height: 800px;
-  max-height: 800px;
+  height: 900px;
+  max-height: 900px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: fixed;
   background-image: url('../../Img/latte.jpg');
+  margin-bottom: 100px;
+  background-color: #FAFAFA;
 }
 
 .bookEvent__content {
@@ -200,7 +202,7 @@
 }
 
 .custom__background {
-  height: 1600px;
+  height: 1580px;
   width: 100%;
   background-color: #FAFAFA;
   /* background-position: center;
