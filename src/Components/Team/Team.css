@@ -6,7 +6,6 @@
 }
 
 .team__content {
-  /* These three helped center it!! So that the footer centered as well */
   width: 280px;
   margin-left: auto;
   margin-right: auto;
@@ -51,23 +50,4 @@
     margin-top: 20px;
     width: 350px;
   }
-  
-  /* .team {
-    width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  .teamInfo {
-    display: flex; 
-    justify-content: space-evenly;
-    width: 500px;
-    padding-top: 150px;
-    margin-right: 0;
-  }
-
-  .teamInfo > section {
-    margin-left: 50px;
-    width: 400px;
-  } */
 }

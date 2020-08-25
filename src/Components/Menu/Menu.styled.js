@@ -71,5 +71,4 @@ export const StyledMenu = styled.nav`
       // }
     }
   }
-
 `;

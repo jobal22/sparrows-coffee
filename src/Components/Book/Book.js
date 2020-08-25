@@ -6,7 +6,6 @@ import './Book.css';
 export default class Book extends Component {
   render() {
     const props = this.props
-    // console.log('Hey', this.props)
     return (
       <div className='book'>
         <section className='bookInfo'>

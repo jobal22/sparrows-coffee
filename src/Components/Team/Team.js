@@ -9,7 +9,7 @@ export default class Team extends Component {
       <div className='team'>
         <div className='team__content'>
           <div className='teamInfoPic'>
-            <img className='profile' src={linc} />
+            <img className='profile' src={linc} alt='profile'/>
           </div>
           <div className='teamInfo'>
               <h3>Lincoln Cieply, Owner</h3>

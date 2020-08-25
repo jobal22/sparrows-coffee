@@ -1,14 +1,9 @@
-import React, { Component, useState } from 'react';
-import PropTypes from 'prop-types';
-// import DatePicker from "react-datepicker";
-// import "react-datepicker/dist/react-datepicker.css";
+import React, { Component } from 'react';
 import Context from '../../context';
 import emailjs from 'emailjs-com';
 import config from '../../.config';
 import Swal from 'sweetalert2';
-import {normalizeInput, vlidateInput} from '../../helpers';
 import PhoneInput from 'react-phone-input-2';
-// import 'react-phone-input-2/lib/style.css';
 import './Form.css';
 
 const Required = () => (
@@ -17,14 +12,14 @@ const Required = () => (
 
 export default class Form extends Component {
 
-  static propTypes = {
-    match: PropTypes.shape({
-      params: PropTypes.object,
-    }),
-    history: PropTypes.shape({
-      push: PropTypes.func,
-    }).isRequired,
-  };
+  // static propTypes = {
+  //   match: PropTypes.shape({
+  //     params: PropTypes.object,
+  //   }),
+  //   history: PropTypes.shape({
+  //     push: PropTypes.func,
+  //   }).isRequired,
+  // };
 
   static contextType = Context;
 
@@ -124,7 +119,7 @@ export default class Form extends Component {
       eventInfo: this.state.eventInfo.value,
       notes: this.state.notes.value,
     }
-    console.log(newGuest)
+    // console.log(newGuest)
     const props = this.props.props
     Swal.fire({title: 'Booking Information Sent!', width: 300, confirmButtonColor: '#9CA7AD'})
     .then(() => {
@@ -142,38 +137,12 @@ export default class Form extends Component {
     });
   }
 
-  // sendEmail (event) {
-  //   event.preventDefault();
-  //   emailjs.sendForm('gmail', `${config.SID}`, event.target, `${config.UID}`)
-  //     .then((result) => {
-  //         console.log(result.text);
-  //     }, (error) => {
-  //         console.log(error.text);
-  //     });
-  // }
-
   render() {
-    // console.log('jobal look', this.props.props.history)
-    // const phoneValue = this.state.phone.value;
-    // const phoneFirstThree = phoneValue.substring(0,3);
-    // const phoneNextThree = phoneValue.substring(3,6);
-    // const phoneNextFour = phoneValue.substring(6,10);
-    // function formatPhone (x,y,z) {
-    //   if (x.length < 3) {
-    //     return x
-    //   } else if (y.length < 3) {
-    //     return x + y
-    //   } else if (z.length < 4) {
-    //     return x + y + z
-    //   } else
-    //   return `(${x}) ${y}-${z}`
-    // }
     return (
       <div className='form'>
         <form
           className='book__form'
           onSubmit={(e) => this.handleFormSubmit(e)}
-          // onSubmit={this.sendEmail}
         >
           <div className='formInfo'>
             <label htmlFor='name'>
@@ -187,7 +156,6 @@ export default class Form extends Component {
               name='name'
               id='name'
               aria-label="Name"
-              // placeholder='123 Lake Ln'
               onChange={this.handleName}
               required
             />
@@ -204,31 +172,10 @@ export default class Form extends Component {
               name='email'
               id='email'
               aria-label="email"
-              // placeholder='Fort Worth'
               onChange={this.handleEmail}
               required
             />
           </div>
-          {/* <div className='formInfo'>
-            <label htmlFor='phone'>
-              Phone:
-              {' '}
-              <Required /> {' '}
-            </label>
-            <br></br>
-            <input
-              type='text'
-              name='phone'
-              id='phone'
-              maxLength='10'
-              aria-label="phone"
-              placeholder='(###) ###-####'
-              value= {formatPhone(phoneFirstThree, phoneNextThree,phoneNextFour)}
-
-              onChange={this.handlePhone}
-              required
-            />
-            </div> */}
           <div className='formInfo'>
             <label htmlFor='phone'>
               Phone:
@@ -237,70 +184,19 @@ export default class Form extends Component {
             </label>
             <br></br>
             <PhoneInput
-              // className='phoneInfo'
-              // className='form-control'
               country='us'
               regions={'north-america'}
               value={'this.state.phone.value'}
-              // disableDropdown='true'
               disableCountryCode='true'
               inputProps={{
                 name: 'phone',
                 required: true,
-                autoFocus: true,
-                // className: 'red',
+                // autoFocus: true,
                 placeholder:'(###) ###-####',
               }}
               onChange={this.handlePhone}
             />
           </div>
-
-            {/* <PhoneInput
-              country='us'
-              regions={'north-america'}
-              value={'this.state.phone.value'}
-              disableDropdown='true'
-              disableCountryCode='true'
-              inputProps={{
-                name: 'phone',
-                required: true,
-                autoFocus: true,
-                placeholder:'(###) ###-####',
-              }}
-              onChange={this.handlePhone}
-            /> */}
-          {/* <div className='formInfo'>
-            <label htmlFor='type' onChange={this.handleType}>
-              Event Type:
-              <br></br>
-              <select>
-                <option>--Select--</option>
-                <option>Church</option>
-                <option>Conference of Expo</option>
-                <option>Corporate or Office Event</option>
-                <option>Retail Event</option>
-                <option>Marketing or Style Shoot</option>
-                <option>Tenant or Resident Event</option>
-                <option>Trial for Permanent Location</option>
-                <option>Wedding</option>
-                <option>Other</option>
-              </select>
-            </label>
-          </div> */}
-          {/* <div className='formInfo'>
-            <label htmlFor='company'>
-              Company (Corporate Only):
-            </label>
-            <br></br>
-            <input
-              type='text'
-              name='company'
-              id='company'
-              aria-label="company"
-              // placeholder='LA'
-              onChange={this.handleCompany}
-            />
-          </div> */}
           <div className='formInfo'>
             <label htmlFor='date'>
             Event Date:
@@ -318,16 +214,6 @@ export default class Form extends Component {
               required
             />
           </div>
-          {/* <div className='formInfo'>
-            <label htmlFor='date' onChange={this.handleEventDate}>
-              Event Date:
-            </label>
-            <br></br>
-            <DatePicker
-              // selected={this.state.startDate}
-              onChange={this.handleChange} className='input'
-            />
-          </div> */}
           <div className='formInfo'>
             <label htmlFor='location'>
               Event Location (Venue):
@@ -339,7 +225,6 @@ export default class Form extends Component {
               type='text'
               name='location'
               id='location'
-              // defaultValue='N/A'
               onChange={this.handleEventLocation}
               required
             />
@@ -352,29 +237,13 @@ export default class Form extends Component {
               <br></br>
               <select required name='packageOption' id='packageOption' onChange={this.handlePackage}>
                 <option value=''>--Select--</option>
-                <option value='25 drinks | 1 Hour of Service | $400'>25 drinks | 1 Hour of Service | $400</option>
-                <option value='50 drinks | 1 Hour of Service | $500'>50 drinks | 1 Hour of Service | $500</option>
-                <option value='75 drinks | 1 Hour of Service | $550'>75 drinks | 1 Hour of Service | $550</option>
-                <option value='100 drinks | 1 Hour of Service | $650'>100 drinks | 1 Hour of Service | $650</option>
-                <option value='150 drinks | 1 Hour of Service | $700'>150 drinks | 1 Hour of Service | $700</option>
+                <option value='1 hour | $350 | 50 guests'>1 hour | $350 | 50 guests</option>
+                <option value='2 hour | $700 | 100 guests'>2 hour | $700 | 100 guests</option>
+                <option value='3 hour | $1050 | 150 guests'>3 hour | $1050 | 150 guests</option>
                 <option value='Custom Event (Please fill out "Additional Request" field)'>Custom Event (Please fill out "Additional Request" field)</option>
               </select>
             </label>
           </div>
-          {/* <div className='formInfo'>
-            <label htmlFor='guest'>
-              Expected Guests:
-              {' '}
-            </label>
-            <br></br>
-            <input
-              type='text'
-              name='guest'
-              id='guest'
-              // defaultValue='N/A'
-              onChange={this.handleExpectedGuests}
-            />
-          </div> */}
           <div className='formInfo'>
             <label htmlFor='eventInfo'>
             Please Tell Us About Your Event:
@@ -385,7 +254,6 @@ export default class Form extends Component {
               type='text'
               name='eventInfo'
               id='eventInfo'
-              // defaultValue='N/A'
               onChange={this.handleEventInfo}
             />
           </div>
@@ -397,22 +265,9 @@ export default class Form extends Component {
             <textarea
               name='notes'
               id='notes'
-              // defaultValue='N/A'
               onChange={this.handleNotes}
             />
            </div>
-          {/* <div className='formInfo'>
-            <label htmlFor='inquiry' onChange={this.handleInquiry}>
-              Please Provide:
-              <br></br>
-              <select>
-                <option>--Select--</option>
-                <option>More Information</option>
-                <option>Quote</option>
-                <option>Invoice</option>
-              </select>
-            </label>
-          </div> */}
           <div className='form__button'>
             <button type='submit'>Let's Brew!</button>
           </div>

@@ -9,11 +9,9 @@
   font-size: 8px;
   font-family: 'Montserrat', sans-serif;
   z-index: 1;
-  /* clear:both; */
 }
 
 ol {
-  /*removes browser default */
   padding: 0;
   margin: 0; 
 }

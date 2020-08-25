@@ -42,14 +42,10 @@ class Contact extends Component {
     let {message} = this.state
     message.value = e.target.value
     this.setState({message})
-    // .then(() => this.setState(() => ({
-    //   toMain: true
-    // })))
   }
 
   submitForm (e) {
     e.preventDefault()
-    // this.props.history.push('/');
     Swal.fire({title: 'Message Sent!', width: 300, confirmButtonColor: '#9CA7AD'})
     .then(() => {
     this.props.history.push('/')})
@@ -66,19 +62,8 @@ class Contact extends Component {
     });
 
   }
-
-  // sendEmail (event) {
-  //   event.preventDefault();
-  //   emailjs.sendForm('gmail', `${config.CID}`, event.target, `${config.UID}`)
-  //     .then((result) => {
-  //         console.log(result.text);
-  //     }, (error) => {
-  //         console.log(error.text);
-  //     });
-  // }
   
   render() {
-    console.log(this.props)
     return (
       <div className='contact'>
         <div className='contact__content'>
@@ -90,7 +75,6 @@ class Contact extends Component {
               <form 
                 className='contact__form'
                 onSubmit={this.submitForm.bind(this)}
-                // onSubmit={this.sendEmail}
               >
                 <div className='formInfo'>
                   <label htmlFor='name'>
@@ -104,7 +88,6 @@ class Contact extends Component {
                     name='name'
                     id='name'
                     aria-label="Name"
-                    // placeholder='123 Lake Ln'
                     onChange={this.handleName}
                     required
                   />
@@ -121,7 +104,6 @@ class Contact extends Component {
                     name='email'
                     id='email'
                     aria-label="email"
-                    // placeholder='Fort Worth'
                     onChange={this.handleEmail}
                     required
                   />
@@ -136,7 +118,6 @@ class Contact extends Component {
                   <textarea
                     name='message'
                     id='message'
-                    // defaultValue='N/A'
                     onChange={this.handleMessage}
                     required
                   />

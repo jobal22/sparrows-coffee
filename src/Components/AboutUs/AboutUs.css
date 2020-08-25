@@ -1,9 +1,6 @@
 .aboutUs {
   padding-top: 80px;
   background-color: #FAFAFA;
-  
-  /* display: flex;
-  flex-direction: column; */
 }
 
 .bookEvent  {
@@ -11,39 +8,20 @@
   justify-content: center;
   font-family: 'Hind', sans-serif;
   font-style: normal;
-  /* padding-top: 50%; */
   background-color: transparent;
-  /* min-width: 280px;
-  min-height: 618.3px; */
   color: #FFF;
-  /* background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; */
 }
-
-/* .bookEvent {
-  background-image: url('../../Img/latte.jpg');
-}
-
-.teamMember {
-  background-image: url('../../Img/cam.jpg');
-} */
 
 .bookEvent__background {
   width: 100%;
   left: 0;
   right: 0;
-  /* height: 1280px; */
   height: 70%;
-  /* max-height: 900px; */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: fixed;
   background-image: url('../../Img/twolatte.jpg');
-  /* margin-bottom: 100px;
-  background-color: #FAFAFA; */
 }
 
 .bookEvent__content {
@@ -64,7 +42,6 @@
   letter-spacing: .01em;
   text-transform: none;
   text-shadow: 1px 1px 8px rgb(97, 97, 97);
-
 }
 
 .bookEvent__content > button, .teamMember__content  > button {
@@ -75,17 +52,12 @@
   padding: 21px 34px;
 }
 
-/* .passion {
-  position: relative;
-} */
-
 .passion {
   display: flex;
   justify-content: center;
   font-family: 'Montserrat', sans-serif;
   font-size: 18px;
   text-align: left;
-  /* padding-top: 240px; */
   margin-top: 100px;
   margin-bottom: 0;
   padding-bottom: 0;
@@ -95,31 +67,11 @@
 
 
 .passion__background {
-  /* margin-top: 200px; */
   height: 750px;
   width: 100%;
   background-color: #FAFAFA;
-  /* background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; */
   position: absolute;
-
-  /* color: white; */
 }
-
-/* .passion__content {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 18px;
-  text-align: left;
-  padding: 60px 0px;
-  margin-left: 20px;
-  margin-right: 20px;
-  max-width: 700px;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-
-} */
 
 .passion > h3 {
   position: absolute;
@@ -127,11 +79,7 @@
   margin: 50px 0px 23.24px;
   color: #525252;
   z-index: 1;
-  /* margin-left: 40px;
-  margin-right: 40px; */
-  /* left: 21%; */
   max-width: 700px;
-
 }
 
 .passion > p {
@@ -139,13 +87,10 @@
   margin: 110px 0px 0px;
   color: #14141480;
   z-index: 1;
-  /* margin-left: 40px;
-  margin-right: 40px; */
   max-width: 250px;
 }
 
 .aboutUsLink {
-  /* text-decoration: none; */
   color: black;
   font-size: 15px;
   font-weight: 600;
@@ -154,29 +99,14 @@
   text-decoration: none;
 }
 
-/* .teamMember {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 18px;
-  text-align: left;
-  padding: 0px 0px;
-  margin: 900px;
-
-} */
 .teamMember  {
   display: flex;
   justify-content: center;
   font-family: 'Hind', sans-serif;
   font-style: normal;
-  /* padding-top: 50%; */
   background-color: transparent;
-  /* min-width: 280px;
-  min-height: 618.3px; */
   margin-top: 900px;
   color: #FFF;
-  /* background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; */
 }
 
 .teamMember__background {
@@ -207,46 +137,24 @@
   height: 1580px;
   width: 100%;
   background-color: #FAFAFA;
-  /* background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; */
   position: absolute;
-
 }
 
 .priceCollection {
-  /* margin-top: 50px; */
   z-index: 1;
   position: absolute;
   margin-top: 300px;
-  /* margin-left: 50% */
-    /* display: flex;
-  justify-content: center; */
   left: 50%;
   transform: translate(-50%, 1%);
-
-
 }
-
-/* .priceOptions {
-  z-index: 1;
-  position: absolute;
-
-} */
 
 .prices {
   margin-top: 30px;
-  /* display: flex; */
-  /* justify-content: center; */
-  /* margin-left: auto;
-  margin-right: auto; */
   text-align: center;
 }
 
 .priceLogo {
   width: 200px;
-  /* margin-left: auto;
-  margin-right: auto; */
 }
 
 .priceInfo {

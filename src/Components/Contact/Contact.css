@@ -1,22 +1,15 @@
 .contact {
-  /* margin-top: 180px; */
   padding-top: 110px;
-  /* text-align: left; */
-  /* margin-left: auto;
-  margin-right: auto; */
-
 }
 
 .contact__content {
   text-align: left;
-  /* These three helped center it!! */
   width: 280px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .contactFormat {
-
   margin-top: 20px;
   margin-bottom: 60px;
   background-color: white;
@@ -27,9 +20,6 @@
   font-family: 'Montserrat', sans-serif;
   font-size: 18px;
   text-align: left;
-  /* padding: 60px 0px; */
-  /* margin-left: 20px;
-  margin-right: 20px; */
   max-width: 700px;
 }
 
@@ -46,18 +36,11 @@
 
   .contactFormat {
     width: 405px;
-
     margin-top: 100px;
     margin-left: auto;
     margin-right: auto;
 
   }
-
-  /* .contactInfo {
-    padding: 100px;
-    margin-left: auto;
-    margin-right: auto;
-  } */
   
   .contactInfo > h3 {
     font-size: 28px;

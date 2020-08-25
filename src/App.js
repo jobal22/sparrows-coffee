@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Route, Link, Switch } from 'react-router-dom';
-// import * as ReactBootStrap from 'react-bootstrap'
 import Context from './context';
 import logo from './Img/SCLogoBig.png';
 import HamburgerMenu from './Components/HamburgerMenu/HamburgerMenu';
@@ -8,7 +7,6 @@ import AboutUs from './Components/AboutUs/AboutUs';
 import Book from './Components/Book/Book';
 import Team from './Components/Team/Team';
 import Contact from './Components/Contact/Contact';
-import Footer from './Footer/Footer';
 import './App.css';
 
 export default class App extends Component {
@@ -69,7 +67,6 @@ export default class App extends Component {
             </Context.Provider>
           </div>
         </div>
-        {/* <Footer /> */}
       </div>
     )
   }
