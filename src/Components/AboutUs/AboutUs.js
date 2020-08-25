@@ -20,7 +20,7 @@ export default function AboutUs() {
   return (
     <div className='aboutUs'>
       <section className='bookEvent'>
-        <img className='bookEvent__background' alt='coffee'/>
+        <img className='bookEvent__background'/>
         <div className='bookEvent__content'>
           <h1>Craft Coffee. <br className='bookEvent__break'></br>Anywhere.</h1>
           <button><Link className='aboutUsLink' to={`/book`}>Book Event</Link></button>
