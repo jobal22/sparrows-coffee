@@ -20,7 +20,7 @@ export default function AboutUs() {
   return (
     <div className='aboutUs'>
       <section className='bookEvent'>
-        <img className='bookEvent__background'/>
+        <div className='bookEvent__background' />
         <div className='bookEvent__content'>
           <h1>Craft Coffee. <br className='bookEvent__break'></br>Anywhere.</h1>
           <button><Link className='aboutUsLink' to={`/book`}>Book Event</Link></button>
@@ -32,7 +32,7 @@ export default function AboutUs() {
           <p>Who says no to coffee? Did you know a person’s ability to smell can evoke particular memories; the scent of a freshly pulled shot of espresso will bring your guests back to that star-lit night they were given the opportunity to sip on a drink they just could not forget. You bring the people, we bring the coffee. Let us make your dreams come true by providing not only the best coffee but enhancing your event that allows you to sit down and enjoy..... Or get up and get more. At Sparrows, we are committed to offering you the best coffee at your next event!</p>
       </section>
       <section className='teamMember'>
-        <img className='teamMember__background' style={{transform: `translateY(-${offsetY * 0.2}px)` }} alt='bride'/>
+        <div className='teamMember__background' style={{transform: `translateY(-${offsetY * 0.2}px)` }} alt='bride'/>
         <div className='teamMember__content'>
           <h1>Coffee with Personality</h1>
           <button><Link className='aboutUsLink' to={`/team`}>Meet Our Team</Link></button>
@@ -65,9 +65,9 @@ export default function AboutUs() {
       </section>
       <footer className="AU__footer">
         <ol className='footIcon'>
-          <li><a className='fIcon far fa-envelope' href={`mailto:${config.email}`} target='_blank'></a></li>
-          <li><a className='fIcon fab fa-linkedin-in'></a></li>
-          <li><a className='fIcon fab fa-instagram' href='https://www.instagram.com/sparrowscoffeega/' target='_blank'></a></li>
+          <li><a className='fIcon far fa-envelope' href={`mailto:${config.email}`} target='_blank' rel="noopener noreferrer"></a></li>
+          <li><a className='fIcon fab fa-linkedin-in' href={''}></a></li>
+          <li><a className='fIcon fab fa-instagram' href='https://www.instagram.com/sparrowscoffeega/' target='_blank' rel="noopener noreferrer"></a></li>
         </ol>
         <p>COPYRIGHT © 2020 SPARROWS COFFEE CO. | ALL RIGHTS RESERVED</p>
       </footer>

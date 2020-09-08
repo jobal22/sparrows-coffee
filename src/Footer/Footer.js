@@ -8,9 +8,9 @@ export default class Footer extends Component {
       <div>
         <footer className="App__footer">
           <ol className='footIcon'>
-            <li><a className='fIcon far fa-envelope' href={`mailto:${config.email}`} target='_blank'></a></li>
-            <li><a className='fIcon fab fa-linkedin-in'></a></li>
-            <li><a className='fIcon fab fa-instagram' href='https://www.instagram.com/sparrowscoffeega/' target='_blank'></a></li>
+            <li><a className='fIcon far fa-envelope' href={`mailto:${config.email}`} target='_blank' rel="noopener noreferrer"></a></li>
+            <li><a className='fIcon fab fa-linkedin-in' href={''}></a></li>
+            <li><a className='fIcon fab fa-instagram' href='https://www.instagram.com/sparrowscoffeega/' target='_blank' rel="noopener noreferrer"></a></li>
           </ol>
           <p>COPYRIGHT © 2020 SPARROWS COFFEE CO. | ALL RIGHTS RESERVED</p>
         </footer>

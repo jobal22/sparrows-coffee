@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Link, Switch } from 'react-router-dom';
 import Context from './context';
-import config from './.config';
+// import config from './.config';
 import logo from './Img/SCLogoBig.png';
 import HamburgerMenu from './Components/HamburgerMenu/HamburgerMenu';
 import AboutUs from './Components/AboutUs/AboutUs';
@@ -14,7 +14,13 @@ export default class App extends Component {
 
   state = {
     emails: [],
+    events: [],
     addEmails: {
+      hasError: false,
+      touched: false,
+      name: '',
+    },
+    addEvents: {
       hasError: false,
       touched: false,
       name: '',
@@ -27,27 +33,24 @@ export default class App extends Component {
     })
   }
 
-  // componentDidMount() {
-  //   Promise.all([
-  //     fetch(`${config.API_ENDPOINT}/api/emails`),
-  //   ])
-  //     .then(([emailsRes]) => {
-  //       if (!emailsRes.ok) return emailsRes.json().then(e => Promise.reject(e))
-  //       return Promise.all([emailsRes.json()])
-  //     })
-  //     .then(([emails]) => {
-  //       this.setState({ loading: false, emails})
-  //     })
-  //     .catch(error => {
-  //       console.error({ error })
-  //     })
-  // }
+  setEvents = events => {
+    this.setState({
+      events
+    })
+  }
 
   handleAddEmails = emails => {
     this.setState({
       emails: [...this.state.emails, emails],
     })
   }
+
+  handleAddEvents = events => {
+    this.setState({
+      events: [...this.state.events, events],
+    })
+  }
+
 
   renderMainRoutes() {
     return (
@@ -64,6 +67,9 @@ export default class App extends Component {
     const contextValue = {
       emails: this.state.emails,
       handleAddEmails: this.handleAddEmails,
+      events: this.state.events,
+      handleAddEvents: this.handleAddEvents,
+
     }
     return (
       <div className='App-container'>

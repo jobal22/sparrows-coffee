@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import Context from '../../context';
+import PropTypes from 'prop-types';
 import emailjs from 'emailjs-com';
+import Context from '../../context';
 import config from '../../.config';
 import Swal from 'sweetalert2';
 import PhoneInput from 'react-phone-input-2';
@@ -12,14 +13,14 @@ const Required = () => (
 
 export default class Form extends Component {
 
-  // static propTypes = {
-  //   match: PropTypes.shape({
-  //     params: PropTypes.object,
-  //   }),
-  //   history: PropTypes.shape({
-  //     push: PropTypes.func,
-  //   }).isRequired,
-  // };
+  static propTypes = {
+    match: PropTypes.shape({
+      params: PropTypes.object,
+    }),
+    history: PropTypes.shape({
+      push: PropTypes.func,
+    }).isRequired,
+  };
 
   static contextType = Context;
 
@@ -44,11 +45,11 @@ export default class Form extends Component {
       touched: false,
       value: '',
     },
-    packageOption: {
+    packageoptions: {
       touched: false,
       value: '',
     },
-    eventInfo: {
+    eventinfo: {
       touched: false,
       value: '',
     },
@@ -89,16 +90,16 @@ export default class Form extends Component {
     this.setState({location})
   }
 
-  handlePackage = (e) => {
-    let {packageOption} = this.state
-    packageOption.value = e.target.value
-    this.setState({packageOption})
+  handlePackageOption = (e) => {
+    let {packageoptions} = this.state
+    packageoptions.value = e.target.value
+    this.setState({packageoptions})
   }
 
   handleEventInfo = (e) => {
-    let {eventInfo} = this.state
-    eventInfo.value = e.target.value
-    this.setState({eventInfo})
+    let {eventinfo} = this.state
+    eventinfo.value = e.target.value
+    this.setState({eventinfo})
   }
 
   handleNotes = (e) => {
@@ -107,34 +108,46 @@ export default class Form extends Component {
     this.setState({notes})
   }
 
-  handleFormSubmit = (e) => {
+  handleEventFormSubmit = (e) => {
     e.preventDefault(e)
-    const newGuest = {
+    const newEvent = {
       name: this.state.name.value,
       email: this.state.email.value,
       phone: this.state.phone.value,
       date: this.state.date.value,
       location: this.state.location.value,
-      packageOption: this.state.packageOption.value,
-      eventInfo: this.state.eventInfo.value,
+      packageoptions: this.state.packageoptions.value,
+      eventinfo: this.state.eventinfo.value,
       notes: this.state.notes.value,
     }
-    // console.log(newGuest)
-    const props = this.props.props
-    Swal.fire({title: 'Booking Information Sent!', width: 300, confirmButtonColor: '#9CA7AD'})
-    .then(() => {
-    props.history.push('/')})
-    .catch(error => {
-      Swal.fire({title: 'Oops!', text: 'Booking information failed', width: 300, confirmButtonColor: '#9CA7AD'})
-      console.error(error)
-      this.setState({ error })
+    fetch(`${config.API_ENDPOINT}/api/events`, {
+      method: 'POST',
+      body: JSON.stringify(newEvent),
+      headers: {
+        'content-type': 'application/json',
+      },
     })
-    emailjs.sendForm('gmail', `${config.SID}`, e.target, `${config.UID}`)
-    .then((result) => {
-        console.log(result.text);
-    }, (error) => {
-        console.log(error.text);
-    });
+    .then(res => {
+      return res.json()
+    })
+    .then((data) => {
+      this.context.handleAddEvents(data)
+      Swal.fire({title: 'Booking Information Sent!', width: 300, confirmButtonColor: '#9CA7AD'})
+      .then(() => {
+      this.props.props.history.push('/')})
+      })
+      .catch(error => {
+        Swal.fire({title: 'Oops!', text: 'Booking information failed', width: 300, confirmButtonColor: '#9CA7AD'})
+        console.error(error)
+        this.setState({ error })
+      })
+      //allows information to be emailed directly to the owner
+      emailjs.sendForm('gmail', `${config.SID}`, e.target, `${config.UID}`)
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
   }
 
   render() {
@@ -142,8 +155,9 @@ export default class Form extends Component {
       <div className='form'>
         <form
           className='book__form'
-          onSubmit={(e) => this.handleFormSubmit(e)}
-        >
+          onSubmit={this.handleEventFormSubmit.bind(this)}
+
+          >
           <div className='formInfo'>
             <label htmlFor='name'>
               Full Name:
@@ -230,12 +244,12 @@ export default class Form extends Component {
             />
           </div>
           <div className='formInfo'>
-            <label htmlFor='packageOption'>
+            <label htmlFor='packageoptions'>
               Select Package:
               {' '}
               <Required /> {' '}
               <br></br>
-              <select required name='packageOption' id='packageOption' onChange={this.handlePackage}>
+              <select required name='packageoptions' id='packageoptions' onChange={this.handlePackageOption}>
                 <option value=''>--Select--</option>
                 <option value='1 hour | $350 | 50 guests'>1 hour | $350 | 50 guests</option>
                 <option value='2 hour | $700 | 100 guests'>2 hour | $700 | 100 guests</option>
@@ -245,15 +259,15 @@ export default class Form extends Component {
             </label>
           </div>
           <div className='formInfo'>
-            <label htmlFor='eventInfo'>
+            <label htmlFor='eventinfo'>
             Please Tell Us About Your Event:
               {' '}
             </label>
             <br></br>
             <input
               type='text'
-              name='eventInfo'
-              id='eventInfo'
+              name='eventinfo'
+              id='eventinfo'
               onChange={this.handleEventInfo}
             />
           </div>

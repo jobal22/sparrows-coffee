@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import emailjs from 'emailjs-com';
-import Context from '../../context'
+import Context from '../../context';
 import config from '../../.config';
 import Swal from 'sweetalert2';
 import Footer from '../../Footer/Footer';
@@ -86,6 +86,7 @@ class Contact extends Component {
         console.error(error)
         this.setState({ error })
       })
+      //allows information to be emailed directly to the owner
       emailjs.sendForm('gmail', `${config.CID}`, e.target, `${config.UID}`)
       .then((result) => {
           console.log(result.text);
@@ -93,26 +94,6 @@ class Contact extends Component {
           console.log(error.text);
       });
   }
-
-
-  // submitForm (e) {
-  //   e.preventDefault()
-  //   Swal.fire({title: 'Requests Sent!', width: 300, confirmButtonColor: '#9CA7AD'})
-  //   .then(() => {
-  //   this.props.history.push('/')})
-  //   .catch(error => {
-  //     Swal.fire({title: 'Oops!', text: 'Requests Failed', width: 300, confirmButtonColor: '#9CA7AD'})
-  //     console.error(error)
-  //     this.setState({ error })
-  //   })
-  //   emailjs.sendForm('gmail', `${config.CID}`, e.target, `${config.UID}`)
-  //   .then((result) => {
-  //       console.log(result.text);
-  //   }, (error) => {
-  //       console.log(error.text);
-  //   });
-
-  // }
   
   render() {
     return (
@@ -125,8 +106,7 @@ class Contact extends Component {
             <section>
               <form 
                 className='contact__form'
-                onSubmit={(e) => this.handleFormSubmit(e)}
-                // onSubmit={this.submitForm.bind(this)}
+                onSubmit={this.handleFormSubmit.bind(this)}
               >
                 <div className='formInfo'>
                   <label htmlFor='name'>
