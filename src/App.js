@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Link, Switch } from 'react-router-dom';
 import Context from './context';
+import config from './.config';
 import logo from './Img/SCLogoBig.png';
 import HamburgerMenu from './Components/HamburgerMenu/HamburgerMenu';
 import AboutUs from './Components/AboutUs/AboutUs';
@@ -12,23 +13,39 @@ import './App.css';
 export default class App extends Component {
 
   state = {
-    guests: [],
-    addGuest: {
+    emails: [],
+    addEmails: {
       hasError: false,
       touched: false,
       name: '',
     }
   }
 
-  setGuests = guests => {
+  setEmails = emails => {
     this.setState({
-      guests
+      emails
     })
   }
 
-  handleAddGuest = guest => {
+  // componentDidMount() {
+  //   Promise.all([
+  //     fetch(`${config.API_ENDPOINT}/api/emails`),
+  //   ])
+  //     .then(([emailsRes]) => {
+  //       if (!emailsRes.ok) return emailsRes.json().then(e => Promise.reject(e))
+  //       return Promise.all([emailsRes.json()])
+  //     })
+  //     .then(([emails]) => {
+  //       this.setState({ loading: false, emails})
+  //     })
+  //     .catch(error => {
+  //       console.error({ error })
+  //     })
+  // }
+
+  handleAddEmails = emails => {
     this.setState({
-      guests: [...this.state.guests, guest],
+      emails: [...this.state.emails, emails],
     })
   }
 
@@ -45,8 +62,8 @@ export default class App extends Component {
 
   render() {
     const contextValue = {
-      guests: this.state.guests,
-      updateGuest: this.updateGuest,
+      emails: this.state.emails,
+      handleAddEmails: this.handleAddEmails,
     }
     return (
       <div className='App-container'>

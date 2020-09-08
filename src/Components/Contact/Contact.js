@@ -1,16 +1,30 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import emailjs from 'emailjs-com';
+import Context from '../../context'
 import config from '../../.config';
 import Swal from 'sweetalert2';
 import Footer from '../../Footer/Footer';
 import './Contact.css';
 
 const Required = () => (
-  <span className='AddAddress__required'>(required)</span>
+  <span className='AddEmails__required'>(required)</span>
 )
 
 class Contact extends Component {
+
+  static propTypes = {
+    match: PropTypes.shape({
+      params: PropTypes.object,
+    }),
+    history: PropTypes.shape({
+      push: PropTypes.func,
+    }).isRequired,
+  };
+
+  static contextType = Context;
+
   state = {
     name: {
       touched: false,
@@ -20,7 +34,7 @@ class Contact extends Component {
       touched: false,
       value: '',
     },
-    message: {
+    requests: {
       touched: false,
       value: '',
     },
@@ -38,30 +52,67 @@ class Contact extends Component {
     this.setState({email})
   }
 
-  handleMessage = (e) => {
-    let {message} = this.state
-    message.value = e.target.value
-    this.setState({message})
+  handleRequests= (e) => {
+    let {requests} = this.state
+    requests.value = e.target.value
+    this.setState({requests})
   }
 
-  submitForm (e) {
-    e.preventDefault()
-    Swal.fire({title: 'Message Sent!', width: 300, confirmButtonColor: '#9CA7AD'})
-    .then(() => {
-    this.props.history.push('/')})
-    .catch(error => {
-      Swal.fire({title: 'Oops!', text: 'Message Failed', width: 300, confirmButtonColor: '#9CA7AD'})
-      console.error(error)
-      this.setState({ error })
+  handleFormSubmit (e) {
+    e.preventDefault(e)
+    const newEmail = {
+      name: this.state.name.value,
+      email: this.state.email.value,
+      requests: this.state.requests.value,
+    }
+    fetch(`${config.API_ENDPOINT}/api/emails`, {
+      method: 'POST',
+      body: JSON.stringify(newEmail),
+      headers: {
+        'content-type': 'application/json',
+      },
     })
-    emailjs.sendForm('gmail', `${config.CID}`, e.target, `${config.UID}`)
-    .then((result) => {
-        console.log(result.text);
-    }, (error) => {
-        console.log(error.text);
-    });
-
+    .then(res => {
+      return res.json()
+    })
+    .then((data) => {
+      this.context.handleAddEmails(data)
+      Swal.fire({title: 'Requests Sent!', width: 300, confirmButtonColor: '#9CA7AD'})
+      .then(() => {
+      this.props.history.push('/')})
+      })
+      .catch(error => {
+        Swal.fire({title: 'Oops!', text: 'Requests Failed', width: 300, confirmButtonColor: '#9CA7AD'})
+        console.error(error)
+        this.setState({ error })
+      })
+      emailjs.sendForm('gmail', `${config.CID}`, e.target, `${config.UID}`)
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
   }
+
+
+  // submitForm (e) {
+  //   e.preventDefault()
+  //   Swal.fire({title: 'Requests Sent!', width: 300, confirmButtonColor: '#9CA7AD'})
+  //   .then(() => {
+  //   this.props.history.push('/')})
+  //   .catch(error => {
+  //     Swal.fire({title: 'Oops!', text: 'Requests Failed', width: 300, confirmButtonColor: '#9CA7AD'})
+  //     console.error(error)
+  //     this.setState({ error })
+  //   })
+  //   emailjs.sendForm('gmail', `${config.CID}`, e.target, `${config.UID}`)
+  //   .then((result) => {
+  //       console.log(result.text);
+  //   }, (error) => {
+  //       console.log(error.text);
+  //   });
+
+  // }
   
   render() {
     return (
@@ -74,7 +125,8 @@ class Contact extends Component {
             <section>
               <form 
                 className='contact__form'
-                onSubmit={this.submitForm.bind(this)}
+                onSubmit={(e) => this.handleFormSubmit(e)}
+                // onSubmit={this.submitForm.bind(this)}
               >
                 <div className='formInfo'>
                   <label htmlFor='name'>
@@ -109,16 +161,16 @@ class Contact extends Component {
                   />
                 </div>
                 <div className='formInfo'>
-                  <label htmlFor='message'>
+                  <label htmlFor='requests'>
                     Additional Requests:
                     {' '}
                     <Required /> {' '}
                   </label>
                   <br></br>
                   <textarea
-                    name='message'
-                    id='message'
-                    onChange={this.handleMessage}
+                    name='requests'
+                    id='requests'
+                    onChange={this.handleRequests}
                     required
                   />
               </div>
