@@ -146,6 +146,24 @@
   margin-top: 300px;
   left: 50%;
   transform: translate(-50%, 1%);
+  text-align: center;
+}
+
+.priceCollection > button {
+  border: none;
+  cursor: pointer;
+  background-color: #a2c3d3;
+  padding: 21px 34px;
+  margin: 15px 0;
+}
+
+.aboutUsLink1 {
+  color: #FFF;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  text-decoration: none;
 }
 
 .prices {
@@ -164,7 +182,7 @@
 .AU__footer {
   position: absolute;
   width: 100%;
-  bottom: -1500px;
+  bottom: -1550px;
   background-color: #a2c3d3;
   color: white;
   padding-top: 23px;
@@ -189,7 +207,6 @@
     height: 900px;
     max-height: 900px;
   }
-  
   
   .bookEvent__content > h1, .teamMember > h1 {
     font-size: 100px;
@@ -237,15 +254,19 @@
   }
 
   .custom {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
   }  
 
   .custom__background {
     height: 800px;
   }
 
+  .priceCollection > button {
+    margin: 25px 0;
+  }  
+
   .AU__footer {
-    bottom: -650px;
+    bottom: -700px;
   }
   
 }
