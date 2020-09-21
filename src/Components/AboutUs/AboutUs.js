@@ -41,7 +41,7 @@ export default function AboutUs() {
       <section className='passion custom'>
         <div className='custom__background'/>
         <h3>Packages</h3>
-        <p>Choose which package best fits your event.  We will have enough product to serve one drink to all your guests and an additional 10%, just in case.  Make your selection when filling out the booking form.</p>
+        <p>Choose which package best fits your event.  We will have enough product to serve one drink to all your guests and an additional 10%, just in case.  The pricing below represents a base price per event. Confirmed pricing will be sent via email with confirmation of event time and date.   Make your selection when filling out the booking form.</p>
         <div className='priceCollection'>
           <div className='priceOptions'>
             <div className='prices'>
