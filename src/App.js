@@ -8,6 +8,7 @@ import AboutUs from './Components/AboutUs/AboutUs';
 import Book from './Components/Book/Book';
 import Team from './Components/Team/Team';
 import Contact from './Components/Contact/Contact';
+import ScrollToTop from './Components/ScrollToTop/ScrollToTop';
 import './App.css';
 
 export default class App extends Component {
@@ -86,6 +87,7 @@ export default class App extends Component {
           </nav>
           <div>
             <Context.Provider value={contextValue}>
+              <ScrollToTop />
               <main className='App__main'>{this.renderMainRoutes()}</main>
             </Context.Provider>
           </div>
