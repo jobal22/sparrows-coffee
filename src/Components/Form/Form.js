@@ -49,6 +49,10 @@ export default class Form extends Component {
       touched: false,
       value: '',
     },
+    eventoptions: {
+      touched: false,
+      value: '',
+    },
     eventinfo: {
       touched: false,
       value: '',
@@ -96,6 +100,12 @@ export default class Form extends Component {
     this.setState({packageoptions})
   }
 
+  handleEventOption = (e) => {
+    let {eventoptions} = this.state
+    eventoptions.value = e.target.value
+    this.setState({eventoptions})
+  }
+
   handleEventInfo = (e) => {
     let {eventinfo} = this.state
     eventinfo.value = e.target.value
@@ -117,6 +127,7 @@ export default class Form extends Component {
       date: this.state.date.value,
       location: this.state.location.value,
       packageoptions: this.state.packageoptions.value,
+      eventoptions: this.state.eventoptions.value,
       eventinfo: this.state.eventinfo.value,
       notes: this.state.notes.value,
     }
@@ -156,7 +167,6 @@ export default class Form extends Component {
         <form
           className='book__form'
           onSubmit={this.handleEventFormSubmit.bind(this)}
-
           >
           <div className='formInfo'>
             <label htmlFor='name'>
@@ -258,6 +268,22 @@ export default class Form extends Component {
               </select>
             </label>
           </div>
+          <div className='formInfo'>
+            <label htmlFor='eventoptions'>
+              Customize Event:
+              {' '}
+              <Required /> {' '}
+              <br></br>
+              <select required name='eventoptions' id='packageoptions' onChange={this.handleEventOption}>
+                <option value=''>--Select--</option>
+                <option value='Custom Cups'>Custom Cups</option>
+                <option value='Custom Logo for Cart'>Custom Logo for Cart</option>
+                <option value='Both Custom Cups and Logo'>Both Custom Cups and Logo</option>
+                <option value='No Customizations'>No Customizations</option>
+              </select>
+            </label>
+          </div>
+
           <div className='formInfo'>
             <label htmlFor='eventinfo'>
             Please Tell Us About Your Event:
