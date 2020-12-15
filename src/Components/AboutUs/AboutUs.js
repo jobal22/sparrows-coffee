@@ -40,10 +40,12 @@ export default function AboutUs() {
       </section>
       <section className='passion custom'>
         <div className='custom__background'/>
-        <h3>Packages</h3>
-        <p>Choose which package best fits your event.  We will have enough product to serve one drink to all your guests and an additional 10%, just in case.  The pricing below represents a base price per event. Confirmed pricing will be sent via email with confirmation of event time and date. Make your selection when filling out the booking form.</p>
+        <h3>Customize Events</h3>
+        {/* <h3>Packages</h3> */}
+        {/* <p>Choose which package best fits your event.  We will have enough product to serve one drink to all your guests and an additional 10%, just in case.  The pricing below represents a base price per event. Confirmed pricing will be sent via email with confirmation of event time and date. Make your selection when filling out the booking form.</p> */}
+        <p>Customizing the coffee needs for your event is easy! When you go to book your event, fill out the form and leave detailed information about the size of your event and your expectations. We will contact you as soon as possible to figure out a plan and pricing. We know planning and hosting an event is tough. So we want to ease your stress and your coffee cravings.</p>
         <div className='priceCollection'>
-          <div className='priceOptions'>
+          {/* <div className='priceOptions'>
             <div className='prices'>
               <img className='priceLogo' src={onehour} alt='options1'/>
               <p className='priceInfo'>$350 | 50 guests</p>
@@ -60,7 +62,7 @@ export default function AboutUs() {
               <img className='priceLogo' src={custom} alt='options4'/>
               <p className='priceInfo'>Customize Your Event</p>
             </div>
-          </div>
+          </div> */}
           <button><Link className='aboutUsLink1' to={`/book`}>Book Event</Link></button>
         </div>
       </section>

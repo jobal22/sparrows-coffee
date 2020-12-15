@@ -45,10 +45,10 @@ export default class Form extends Component {
       touched: false,
       value: '',
     },
-    packageoptions: {
-      touched: false,
-      value: '',
-    },
+    // packageoptions: {
+    //   touched: false,
+    //   value: '',
+    // },
     eventoptions: {
       touched: false,
       value: '',
@@ -94,11 +94,11 @@ export default class Form extends Component {
     this.setState({location})
   }
 
-  handlePackageOption = (e) => {
-    let {packageoptions} = this.state
-    packageoptions.value = e.target.value
-    this.setState({packageoptions})
-  }
+  // handlePackageOption = (e) => {
+  //   let {packageoptions} = this.state
+  //   packageoptions.value = e.target.value
+  //   this.setState({packageoptions})
+  // }
 
   handleEventOption = (e) => {
     let {eventoptions} = this.state
@@ -126,7 +126,7 @@ export default class Form extends Component {
       phone: this.state.phone.value,
       date: this.state.date.value,
       location: this.state.location.value,
-      packageoptions: this.state.packageoptions.value,
+      // packageoptions: this.state.packageoptions.value,
       eventoptions: this.state.eventoptions.value,
       eventinfo: this.state.eventinfo.value,
       notes: this.state.notes.value,
@@ -253,7 +253,7 @@ export default class Form extends Component {
               required
             />
           </div>
-          <div className='formInfo'>
+          {/* <div className='formInfo'>
             <label htmlFor='packageoptions'>
               Select Package:
               {' '}
@@ -267,7 +267,7 @@ export default class Form extends Component {
                 <option value='Custom Event (Please fill out "Additional Request" field)'>Custom Event (Please fill out "Additional Request" field)</option>
               </select>
             </label>
-          </div>
+          </div> */}
           <div className='formInfo'>
             <label htmlFor='eventoptions'>
               Customize Event:

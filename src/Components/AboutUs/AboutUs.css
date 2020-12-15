@@ -134,7 +134,7 @@
 }
 
 .custom__background {
-  height: 1800px;
+  height: 700px;
   width: 100%;
   background-color: #FAFAFA;
   position: absolute;
@@ -147,6 +147,8 @@
   left: 50%;
   transform: translate(-50%, 1%);
   text-align: center;
+  /* THIS WAS ADDED WHEN THE CUPS WERE REMOVED */
+  padding-top: 100px;
 }
 
 .priceCollection > button {
@@ -182,7 +184,7 @@
 .AU__footer {
   position: absolute;
   width: 100%;
-  bottom: -1750px;
+  bottom: -680px;
   background-color: #a2c3d3;
   color: white;
   padding-top: 23px;
@@ -243,7 +245,7 @@
   }
 
   .priceCollection {
-    margin-top: 375px;
+    margin-top: 330px;
     max-width: 700px;
   }
 
@@ -258,7 +260,7 @@
   }  
 
   .custom__background {
-    height: 800px;
+    height: 650px;
   }
 
   .priceCollection > button {
@@ -266,7 +268,7 @@
   }  
 
   .AU__footer {
-    bottom: -700px;
+    bottom: -500px;
   }
   
 }
